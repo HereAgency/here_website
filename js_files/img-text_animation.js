@@ -8,13 +8,17 @@
     var text = element.querySelector(".text-animation");
     var splitLine = element.querySelector(".split-child")
     //SplitText to work with animation line by line
-    const childSplit = new SplitText(text, {
+    const childSplit = nestedLinesSplit(text, {
       type: "lines",
       linesClass: "split-child"
-    });
-    const parentSplit = new SplitText(text, {
-      linesClass: "split-parent"
-    });
+    }); 
+// 	const childSplit = new SplitText(text, {
+//       type: "lines",
+//       linesClass: "split-child"
+//     });
+//     const parentSplit = new SplitText(text, {
+//       linesClass: "split-parent"
+//     });
 		// GSAP timeline to animate the text
     //Make the text appear first
     tl.to(text,{
