@@ -17,7 +17,7 @@
     });
 		// GSAP timeline to animate the text
     //Make the text appear first
-    tl.to(text,{
+    tl.to(element,{
       duration:0.01,
       opacity:1
     })
@@ -82,5 +82,3 @@
 	};
 	document.addEventListener("DOMContentLoaded", onLoad);
 })(document);
-
-
