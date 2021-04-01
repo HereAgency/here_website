@@ -1,6 +1,8 @@
+(function (doc) {
+	"use strict";
 
-  var tl = gsap.timeline();
-  
+  //Global GSAP Timeline
+	var tl = gsap.timeline();
   
   function textTrigger(element){
     var text = element.querySelector(".text-animation");
@@ -26,6 +28,7 @@
       stagger: 0.15
     }, ">");
 	}
+
 	function revealImage(element) {
 		var reveal = element.querySelector('.revealer');
 		var img = element.querySelector('.img-animation');
@@ -37,22 +40,22 @@
 		})
  		//Animate the reveal box from the bottom to the full height
 		.from(reveal, {
-          duration:0.5,
-          transform: 'scale3d(1,0,1)',
-          transformOrigin: '50% 100%',
-          ease: Power4.easeOut,
+      duration:0.5,
+			transform: 'scale3d(1,0,1)',
+			transformOrigin: '50% 100%',
+			ease: Power4.easeOut,
 		}, ">")
     // Make the image visibile
 		.to(img, {
-          duration:0.01,
-          opacity:1
+      duration:0.01,
+      opacity:1
 		}, ">")
     //Animate the reveal box from full height to the top with no height
 		.to(reveal, {
-          duration: 0.5,
-          transform: 'scale3d(1,0,1)',
-          transformOrigin: '50% 0%',
-          ease: Power4.easeOut
+		  duration: 0.5,
+			transform: 'scale3d(1,0,1)',
+			transformOrigin: '50% 0%',
+			ease: Power4.easeOut
 		}, ">");
 	}
 	
@@ -67,6 +70,7 @@
         elText.classList.add("hasClassTriggered"); 
       }
     });
+    inView.threshold(0.5);
     inView(".image-wrapper").on("enter", function (elImg){
       if (elImg.classList.contains("hasClassTriggered")){
         return;
@@ -77,3 +81,6 @@
     });
 	};
 	document.addEventListener("DOMContentLoaded", onLoad);
+})(document);
+
+
