@@ -60,7 +60,7 @@
 	}
 	
 	var onLoad = function () {
-    inView(".text-heading")
+    inView(".text-wrapper")
       .on("enter", function (elText){
       //Only triggers once for each Text Box
       if (elText.classList.contains("hasClassTriggered")){
