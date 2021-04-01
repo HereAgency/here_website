@@ -8,7 +8,7 @@
  * @author: Jack Doyle, jack@greensock.com
 */
 /* eslint-disable */
-import { emojiExp, getText } from "./utils/strings.js";
+//import { emojiExp, getText } from "./utils/strings.js";
 
 let _doc, _win, _coreInitted,
 	_stripExp = /(?:\r|\n|\t\t)/g, //find carriage returns, new line feeds and double-tabs.
@@ -409,7 +409,7 @@ let _doc, _win, _coreInitted,
 		_splitRawText(element, vars, wordStart, charStart);
 	};
 
-export class SplitText {
+class SplitText {
 
 	constructor(element, vars) {
 		_coreInitted || _initCore();
@@ -467,5 +467,3 @@ export class SplitText {
 }
 
 SplitText.version = "3.6.1";
-
-export { SplitText as default };
