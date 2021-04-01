@@ -17,7 +17,7 @@
     });
 		// GSAP timeline to animate the text
     //Make the text appear first
-    tl.to(element,{
+    tl.to(text,{
       duration:0.01,
       opacity:1
     })
