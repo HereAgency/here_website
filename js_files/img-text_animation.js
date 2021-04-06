@@ -117,7 +117,7 @@
         elText.classList.add("hasClassTriggered"); 
       }
     });
-    inView.threshold(0.5);
+//    inView.threshold(0.5);
     inView(".image-wrapper").on("enter", function (elImg){
       if (elImg.classList.contains("hasClassTriggered")){
         return;
