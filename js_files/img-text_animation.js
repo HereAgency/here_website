@@ -1,5 +1,32 @@
-(function (doc) {
-	"use strict";
+$('document').ready(function(){
+  
+  textHeader();
+
+  inView(".text-wrapper")
+    .on("enter", function (elText){
+    //Only triggers once for each Text Box
+    if (elText.classList.contains("hasClassTriggered")){
+      return;
+    }else{
+      textTrigger(elText);
+      elText.classList.add("hasClassTriggered"); 
+    }
+  });
+  inView.threshold(0.5);
+  inView(".image-wrapper").on("enter", function (elImg){
+    if (elImg.classList.contains("hasClassTriggered")){
+      return;
+    }else{
+      revealImage(elImg);
+      elImg.classList.add("hasClassTriggered"); 
+    }
+  });
+	// "use strict";
+  
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector('.scroll-container'),
+    smooth: true
+  })
 
   //Global GSAP Timeline
 	// var tlTextHeader = gsap.timeline();
@@ -103,29 +130,3 @@
 			ease: Power4.easeOut
 		}, ">");
 	}
-	
-	var onLoad = function () {
-    textHeader();
-    
-    inView(".text-wrapper")
-      .on("enter", function (elText){
-      //Only triggers once for each Text Box
-      if (elText.classList.contains("hasClassTriggered")){
-        return;
-      }else{
-        textTrigger(elText);
-        elText.classList.add("hasClassTriggered"); 
-      }
-    });
-//    inView.threshold(0.5);
-    inView(".image-wrapper").on("enter", function (elImg){
-      if (elImg.classList.contains("hasClassTriggered")){
-        return;
-      }else{
-        revealImage(elImg);
-        elImg.classList.add("hasClassTriggered"); 
-      }
-    });
-	};
-	document.addEventListener("DOMContentLoaded", onLoad);
-})(document);
