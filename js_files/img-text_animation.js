@@ -130,3 +130,5 @@ $('document').ready(function(){
 			ease: Power4.easeOut
 		}, ">");
 	}
+
+});
