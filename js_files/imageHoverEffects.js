@@ -6,7 +6,7 @@
     smooth: true
   })
   //*************************************
-  // CODROPS ANIMATION - preloader.js file
+  // CODROPS ANIMATION - preloader.js
   //*************************************
   const body = document.body;
   
@@ -33,7 +33,6 @@
 
     });
   };
-
   //*************************************
   // CODROPS ANIMATION - utils.js
   //*************************************
@@ -62,9 +61,10 @@
   };
   // Generate a random float.
   const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
+  
  
   //*************************************
-  // CODROPS ANIMATION - cursor.js file
+  // CODROPS ANIMATION - cursor.js
   //*************************************
   // Track the mouse position
   let mouse = {x: 0, y: 0};
@@ -101,7 +101,54 @@
       this.DOM.el.style.transform = `translateX(${(this.renderedStyles['tx'].previous)}px) translateY(${this.renderedStyles['ty'].previous}px)`;
       requestAnimationFrame(() => this.render());
     }
-  } 
+  }
+  //*************************************
+  // SECTION: BACKGROUND CHANGE ON HOVER
+  //*************************************
+  const labelTrigger = $(".hover-section .section-wrapper a");
+  const hoverImg = "#service-img-";
+  const hoverLabel = "#service-lbl-";
+  const allLabels = $("[id*=service-lbl-]");
+
+  let imgId = 0;
+
+  labelTrigger.mouseenter(function() {
+    imgId = this.id.slice(-1);
+
+    // HIGHLIGHT ONLY THE LABEL ON HOVER:
+    allLabels.css("opacity", "0.32");
+    $(hoverLabel+imgId+"").css("opacity", "1", );
+
+    // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
+    $(hoverImg + imgId + "")
+      .fadeIn()
+      .addClass("service-lbl-active")
+  });
+  labelTrigger.mouseleave(function() {
+    imgId = this.id.slice(-1);
+
+    // LABELS BACK TO NORMAL COLOR
+    allLabels.css("opacity", "1");
+
+    // HIDE IMAGE
+    // console.log("mouseleft item: "+ imgId);
+    $(hoverImg + imgId + "")
+      .css("opacity", "0")
+      .removeClass("service-lbl-active")
+  });
+  
+  //*************************************
+  // CODROPS ANIMATION - index.js file
+  //*************************************
+  // menu (<nav> element)
+  const menuEl = document.querySelector('.menu');
+  preloader('.menu__item').then(() => {
+    // initialize custom cursor
+    const cursor = new Cursor(document.querySelector('.cursor'));
+    // initialize menu
+    new Menu(menuEl);
+  });
+  
   
   //*************************************
   // CODROPS ANIMATION - menuItem.js file
@@ -156,7 +203,7 @@
       this.DOM.revealInner.appendChild(this.DOM.revealImage);
       this.DOM.reveal.appendChild(this.DOM.revealInner);
       this.DOM.el.appendChild(this.DOM.reveal);
-      // console.log(this.DOM.el);
+      console.log(this.DOM.el);
     }
     // calculate the position/size of both the menu item and reveal element
     calcBounds() {
@@ -213,7 +260,7 @@
     }
     // hide the image element
     hideImage() {
-      // console.log("hideImage()");
+      console.log("hideImage()");
       // kill any current tweens
       gsap.killTweensOf(this.DOM.revealInner);
       gsap.killTweensOf(this.DOM.revealImage);
@@ -251,7 +298,6 @@
     }
     // translate the item as the mouse moves
     render() {
-      console.log("test render()");
       this.requestId = undefined;
 
       if ( this.firstRAFCycle ) {
@@ -327,19 +373,6 @@
       [...this.DOM.menuItems].forEach((item, pos) => {
         this.menuItems.push(new MenuItem(item, pos, this.animatableProperties));
       }); 
-      
-      
-      // show the menu items (initial animation where each menu item gets revealed)
-      // this.showMenuItems();
+     
     }
-    // initial animation for revealing the menu items
-    // showMenuItems() {
-    //   gsap.to(this.menuItems.map(item => item.DOM.textInner), {
-    //     duration: 1.2,
-    //     ease: 'Expo.easeOut',
-    //     startAt: {y: '100%'},
-    //     y: 0,
-    //     delay: pos => pos*0.06
-    //   });
-    // }
   }
