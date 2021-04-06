@@ -2,27 +2,30 @@
 	"use strict";
 
   //Global GSAP Timeline
-	var tl = gsap.timeline();
+	// var tl = gsap.timeline();
   
   function textTrigger(element){
+    var tlText = gsap.timeline();
     var text = element.querySelector(".text-animation");
     var splitLine = element.querySelector(".split-child")
     //SplitText to work with animation line by line
-    const childSplit = nestedLinesSplit(text, {
+    // const childSplit = nestedLinesSplit(text, {
+    //   type: "lines",
+    //   linesClass: "split-child"
+    // }); 
+    const childSplit = new SplitText(text, {
       type: "lines",
       linesClass: "split-child"
-    }); 
-// 	const childSplit = new SplitText(text, {
-//       type: "lines",
-//       linesClass: "split-child"
-//     });
-//     const parentSplit = new SplitText(text, {
-//       linesClass: "split-parent"
-//     });
+    });
+    const parentSplit = new SplitText(text, {
+      linesClass: "split-parent"
+    });
 		// GSAP timeline to animate the text
     //Make the text appear first
-    tl.to(text,{
-      duration:0.01,
+    
+    tlText
+      .to(text,{
+      duration:0.5,
       opacity:1
     })
       .from(childSplit.lines,{
@@ -30,7 +33,8 @@
       yPercent: 100,
       ease: "power4",
       stagger: 0.15
-    }, ">");
+    }, ">")
+    ;
 	}
 
 	function revealImage(element) {
@@ -38,6 +42,8 @@
 		var img = element.querySelector('.img-animation');
 		// GSAP timeline to animate the reveal box and the image
     // 		//First make the revealBox visible
+    
+	var tl = gsap.timeline();
 		tl.to(reveal,{
       duration:0.01,
 			opacity: 1
