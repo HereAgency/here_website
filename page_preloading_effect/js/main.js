@@ -11,7 +11,7 @@
 (function() {
 
 	var support = { animations : Modernizr.cssanimations },
-		container = document.getElementById( 'ip-container' ),
+		container = document.querySelector( '.ip-container' ),
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
@@ -66,4 +66,5 @@
 		window.scrollTo( 0, 0 );
 	}
 	init();
+
 })();
