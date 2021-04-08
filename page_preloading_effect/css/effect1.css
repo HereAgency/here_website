@@ -1,4 +1,4 @@
-.ip-header {
+.ip-container .ip-header {
 	position: fixed;
 	top: 0;
 	z-index: 100;
@@ -7,7 +7,7 @@
 	height: 100%;
 	background: #232324;
 }
-.ip-logo{
+.ip-container .ip-logo{
 	position: absolute;
 	margin: 0;
 	top: 0;
@@ -50,10 +50,12 @@
 /* logo fade away after animation */
 .loaded .ip-logo{
 	opacity: 1;
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
-	-webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
-	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	/* -webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%; */
+	-webkit-animation: animLoadedLogo 0.3s linear forwards;
+	animation: animLoadedLogo 0.3s linear forwards;
+	/* -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards; */
 }
 @-webkit-keyframes animLoadedLogo {
 	to {
@@ -70,8 +72,8 @@
 
 /* Header animation when loading finishes */
 .loaded .ip-header {
-	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) 0.5s forwards;
-	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) 0.5s forwards;
+	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1)forwards;
+	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
 @-webkit-keyframes animLoadedHeader {
