@@ -50,8 +50,7 @@
 				this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
 
-				classie.add(document.body, 'layout-switch');
-				console.log('test scroll');
+				classie.add(container, 'layout-switch');
 				window.removeEventListener('scroll', noscroll);
 			};
 
@@ -60,7 +59,7 @@
 			} else {
 				onEndHeaderAnimation();
 			}
-		}, 1300);
+		}, 1600);
 	}	
 	function noscroll() {
 		window.scrollTo( 0, 0 );
