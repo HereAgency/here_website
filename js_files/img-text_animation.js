@@ -23,10 +23,11 @@ $('document').ready(function(){
   });
 	// "use strict";
   
-  const scroller = new LocomotiveScroll({
+/*  const scroller = new LocomotiveScroll({
     el: document.querySelector('.scroll-container'),
     smooth: true
   })
+*/
 
   //Global GSAP Timeline
 	// var tlTextHeader = gsap.timeline();
