@@ -1,6 +1,8 @@
 $('document').ready(function(){
   
-  textHeader();
+  setTimeout(() => {
+      textHeader();
+  }, 3000);
 
   inView(".text-wrapper")
     .on("enter", function (elText){
