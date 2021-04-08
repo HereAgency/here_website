@@ -58,12 +58,16 @@
 	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 @-webkit-keyframes animLoadedLogo {
-	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); opacity:0; }
+	to {
+		 /* -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1);  */
+		opacity:0; }
 }
 @keyframes animLoadedLogo {
 	to { 
-		-webkit-transform: translate3d(-50%,50%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1);opacity:0; 
-		transform: translate3d(-50%,50%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); opacity:0; }
+		-webkit-transform: translate3d(0%,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1);
+		opacity:0; 
+		transform: translate3d(0%,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
+		opacity:0; }
 }
 
 /* Header animation when loading finishes */
