@@ -60,7 +60,7 @@
 			} else {
 				onEndHeaderAnimation();
 			}
-		}, 2000);
+		}, 1300);
 	}	
 	function noscroll() {
 		window.scrollTo( 0, 0 );
