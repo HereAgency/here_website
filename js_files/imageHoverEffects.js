@@ -1,10 +1,10 @@
   //*************************************
   // LOCOMOTIVE SCROLL
   //*************************************
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector('.scroll-container'),
-    smooth: true
-  })
+//   const scroller = new LocomotiveScroll({
+//     el: document.querySelector('.scroll-container'),
+//     smooth: true
+//   })
   //*************************************
   // CODROPS ANIMATION - preloader.js
   //*************************************
