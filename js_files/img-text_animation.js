@@ -46,13 +46,13 @@ $('document').ready(function () {
 
   tlTextHeader
     .to(text, {
-      duration: 0.2,
+      duration: 0.5,
       opacity: 1,
     })
     .from(
       childSplit.lines,
       {
-        duration: 0.6,
+        duration: 1,
         yPercent: 100,
         ease: 'power4',
         stagger: 0.15,
@@ -84,13 +84,13 @@ $('document').ready(function () {
 
   tlText
     .to(text, {
-      duration: 0.5,
+      duration: 0.2,
       opacity: 1,
     })
     .from(
       childSplit.lines,
       {
-        duration: 1,
+        duration: 0.6,
         yPercent: 100,
         ease: 'power4',
         stagger: 0.15,
