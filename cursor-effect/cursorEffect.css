@@ -1,0 +1,131 @@
+
+/* #Cursor
+================================================== */
+.cursor-dot,
+.cursor,
+.cursor2,
+.cursor3{
+  position: fixed;
+  border-radius: 50%; 
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  z-index: 4;
+  transition: all 200ms ease-out;
+}
+.cursor-dot{
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  z-index:6;
+  opacity:1;
+}
+.cursor-dot.hover{
+  opacity:0;
+  z-index:1;
+}
+.cursor{
+  background-color: red;
+  height: 0;
+  width: 0;
+}
+.cursor2,.cursor3{
+  height: 50px;
+  width: 50px;
+  transition: all 200ms ease-out;
+  background-position: center;
+  background-size: 0 0;
+}
+/* image load */
+.cursor2{
+  border: 2px solid red;
+}
+.cursor2.hover{
+  background-size: cover;
+}
+.cursor2.hover,
+.cursor3.hover{
+  height: 220px;
+  width: 320px;
+  border:none;
+  border-radius: 8px;
+}
+.cursor__circle{
+  width: 64px;
+  height: 64px;
+  margin-top: -50%;
+  margin-left: -50%;
+  border-radius: 50%;
+  border: solid 1px rgba(227, 222, 193, 0.64);
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+body.arrow .cursor2.hover,
+body.arrow .cursor3.hover{
+  height: 64px;
+  width: 64px;
+  transform: scale(2) translateX(-25%) translateY(-25%);
+  border-radius: 50%;
+  background-color: red;
+  z-index:5;
+  opacity:0.5;
+}
+body.arrow .cursor2.hover:after,
+body.arrow .cursor3.hover:after{
+  content: '';
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://svgshare.com/i/MzQ.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:50%;
+}
+body.img-1-wrap .cursor2,.cursor3{
+  background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+}
+body.img-2-wrap .cursor2,.cursor3{
+  background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+}
+body.img-3-wrap .cursor2,.cursor3{
+  background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+}
+body.img-4-wrap .cursor2,.cursor3{
+  background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+}
+.hover-target{
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: red;
+  transition: color 250ms ease;
+}
+.hover-target:before{
+  position: absolute;
+  content: '';
+  height: 0;
+  border-radius: 1px;
+  bottom: 0;
+  left: -10px;
+  width: calc(100% + 20px);
+  border-radius: 2px;
+  display: block;
+  background-color: red;
+  transition: height 250ms ease;
+  mix-blend-mode: difference;
+  opacity: 0.6;
+}
+.hover-target:hover:before{
+  height: 100%;
+}
+.hover-target:hover{
+  z-index: 5;
+  color: red;
+}
