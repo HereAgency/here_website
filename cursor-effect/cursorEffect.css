@@ -37,7 +37,6 @@ cursor:none;
   z-index:1;
 }
 .cursor{
-/*   background-color: red; */
   background-color: var(--blue);
   height: 0;
   width: 0;
@@ -49,11 +48,6 @@ cursor:none;
   background-position: center;
   background-size: 0 0;
 }
-.cursor3{
-  background-color:red;
-  border: 2px solid red;
-  opacity:0.5;
-}
 .cursor2.hover{
   height: 220px;
   width: 320px;
@@ -61,11 +55,15 @@ cursor:none;
   border-radius: 8px;
   background-size: cover;
 }
+.cursor3{
+  background-color:red;
+  border: 2px solid red;
+  opacity:0.5;
+}
 .cursor3.hover{
   opacity:0;
 }
-
-.cursor__circle{
+/* .cursor__circle{
   width: 64px;
   height: 64px;
   margin-top: -50%;
@@ -77,8 +75,20 @@ cursor:none;
     border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+} */
+
+body.img-1-wrap .cursor2{
+  background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
 }
-body.arrow .cursor2.hover,
+body.img-2-wrap .cursor2{
+  background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+}
+body.img-3-wrap .cursor2{
+  background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+}
+body.img-4-wrap .cursor2{
+  background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+}
 body.arrow .cursor3.hover{
   height: 64px;
   width: 64px;
@@ -88,7 +98,6 @@ body.arrow .cursor3.hover{
   z-index:6;
   opacity:0.5;
 }
-body.arrow .cursor2.hover:after,
 body.arrow .cursor3.hover:after{
   content: '';
   position: absolute;
@@ -101,20 +110,8 @@ body.arrow .cursor3.hover:after{
   background-position: center;
   background-size:50%;
 }
-body.img-1-wrap .cursor2{
-  background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
-}
-body.img-2-wrap .cursor2,.cursor3{
-  background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
-}
-body.img-3-wrap .cursor2,.cursor3{
-  background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
-}
-body.img-4-wrap .cursor2,.cursor3{
-  background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
-}
 
-.hover-target{
+a.hover-target{
   position: relative;
   display: inline-block;
   text-decoration: none;
@@ -136,13 +133,10 @@ a.hover-target:before{
   mix-blend-mode: difference;
   opacity: 0.3;
 }
-.hover-target:hover:before{
+a.hover-target:hover:before{
   height: 100%;
 }
 a.hover-target:hover{
   z-index:5;
   color:#fff;
-/*   color: red; */
 }
-
-
