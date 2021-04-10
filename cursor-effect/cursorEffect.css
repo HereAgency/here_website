@@ -1,7 +1,8 @@
 
 /* #Cursor
 ================================================== */
-.cursor-dot,
+
+/* .cursor-dot, */
 .cursor,
 .cursor2,
 .cursor3{
@@ -15,11 +16,15 @@
   transition: all 200ms ease-out;
 }
 .cursor-dot{
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: fixed;
+  border-radius: 50%; 
+  pointer-events: none;
+  left: 50px;
+  top: 50%;
   width: 8px;
   height: 8px;
   background-color: red;
-  z-index:6;
+  z-index:5;
   opacity:1;
 }
 .cursor-dot.hover{
