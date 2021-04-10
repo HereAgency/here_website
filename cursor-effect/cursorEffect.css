@@ -77,7 +77,7 @@ body.arrow .cursor3.hover{
   transform: scale(2) translateX(-25%) translateY(-25%);
   border-radius: 50%;
   background-color: red;
-  z-index:5;
+  z-index:100;
   opacity:0.5;
 }
 body.arrow .cursor2.hover:after,
