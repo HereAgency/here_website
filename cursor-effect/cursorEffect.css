@@ -1,8 +1,12 @@
-
+html{
+cursor:none;
+}
+a{
+cursor:none;
+}
 /* #Cursor
 ================================================== */
-
-/* .cursor-dot, */
+.cursor-dot,
 .cursor,
 .cursor2,
 .cursor3{
@@ -16,15 +20,11 @@
   transition: all 200ms ease-out;
 }
 .cursor-dot{
-  position: fixed;
-  border-radius: 50%; 
-  pointer-events: none;
-  left: 50px;
-  top: 50%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   width: 8px;
   height: 8px;
   background-color: red;
-  z-index:5;
+  z-index:6;
   opacity:1;
 }
 .cursor-dot.hover{
@@ -32,7 +32,8 @@
   z-index:1;
 }
 .cursor{
-  background-color: red;
+/*   background-color: red; */
+  background-color: var(--blue);
   height: 0;
   width: 0;
 }
@@ -43,19 +44,20 @@
   background-position: center;
   background-size: 0 0;
 }
-/* image load */
-.cursor2{
+.cursor3{
+  background-color:red;
   border: 2px solid red;
+  opacity:0.5;
 }
 .cursor2.hover{
-  background-size: cover;
-}
-.cursor2.hover,
-.cursor3.hover{
   height: 220px;
   width: 320px;
   border:none;
   border-radius: 8px;
+  background-size: cover;
+}
+.cursor3.hover{
+  opacity:0;
 }
 .cursor__circle{
   width: 64px;
@@ -112,8 +114,7 @@ body.img-4-wrap .cursor2,.cursor3{
   color: red;
   transition: color 250ms ease;
 }
-//links background
-a.hover-target:before{
+.hover-target:before{
   position: absolute;
   content: '';
   height: 0;
@@ -126,12 +127,12 @@ a.hover-target:before{
   background-color: red;
   transition: height 250ms ease;
   mix-blend-mode: difference;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .hover-target:hover:before{
   height: 100%;
 }
-a.hover-target:hover{
-  z-index: 6;
+.hover-target:hover{
+  z-index: 7;
   color: red;
 }
