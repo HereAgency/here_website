@@ -126,6 +126,6 @@ body.img-4-wrap .cursor2,.cursor3{
   height: 100%;
 }
 .hover-target:hover{
-  z-index: 5!important;
+  z-index: 150!important;
   color: red;
 }
