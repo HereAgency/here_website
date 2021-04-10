@@ -77,7 +77,7 @@ body.arrow .cursor3.hover{
   transform: scale(2) translateX(-25%) translateY(-25%);
   border-radius: 50%;
   background-color: red;
-  z-index:100;
+  z-index:5;
   opacity:0.5;
 }
 body.arrow .cursor2.hover:after,
@@ -131,7 +131,7 @@ a.hover-target:before{
 .hover-target:hover:before{
   height: 100%;
 }
-.hover-target:hover{
-  z-index: 150!important;
+a.hover-target:hover{
+  z-index: 6;
   color: red;
 }
