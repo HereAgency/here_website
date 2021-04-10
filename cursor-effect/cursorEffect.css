@@ -1,12 +1,13 @@
+
+/* #Cursor
+================================================== */
 html{
 cursor:none;
 }
 a{
 cursor:none;
 }
-/* #Cursor
-================================================== */
-.cursor-dot,
+/* .cursor-dot, */
 .cursor,
 .cursor2,
 .cursor3{
@@ -20,11 +21,15 @@ cursor:none;
   transition: all 200ms ease-out;
 }
 .cursor-dot{
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: fixed;
+  border-radius: 50%; 
+  pointer-events: none;
+  left: 50px;
+  top: 50%;
   width: 8px;
   height: 8px;
   background-color: red;
-  z-index:6;
+  z-index:5;
   opacity:1;
 }
 .cursor-dot.hover{
@@ -59,6 +64,7 @@ cursor:none;
 .cursor3.hover{
   opacity:0;
 }
+
 .cursor__circle{
   width: 64px;
   height: 64px;
@@ -79,7 +85,7 @@ body.arrow .cursor3.hover{
   transform: scale(2) translateX(-25%) translateY(-25%);
   border-radius: 50%;
   background-color: red;
-  z-index:5;
+  z-index:6;
   opacity:0.5;
 }
 body.arrow .cursor2.hover:after,
@@ -95,7 +101,7 @@ body.arrow .cursor3.hover:after{
   background-position: center;
   background-size:50%;
 }
-body.img-1-wrap .cursor2,.cursor3{
+body.img-1-wrap .cursor2{
   background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
 }
 body.img-2-wrap .cursor2,.cursor3{
@@ -107,14 +113,15 @@ body.img-3-wrap .cursor2,.cursor3{
 body.img-4-wrap .cursor2,.cursor3{
   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
 }
+
 .hover-target{
   position: relative;
   display: inline-block;
   text-decoration: none;
-  color: red;
+  color: var(--purple);
   transition: color 250ms ease;
 }
-.hover-target:before{
+a.hover-target:before{
   position: absolute;
   content: '';
   height: 0;
@@ -127,12 +134,15 @@ body.img-4-wrap .cursor2,.cursor3{
   background-color: red;
   transition: height 250ms ease;
   mix-blend-mode: difference;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 .hover-target:hover:before{
   height: 100%;
 }
-.hover-target:hover{
-  z-index: 7;
-  color: red;
+a.hover-target:hover{
+  z-index:5;
+  color:#fff;
+/*   color: red; */
 }
+
+
