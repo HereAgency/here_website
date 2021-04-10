@@ -1,5 +1,3 @@
-var endX = window.innerWidth / 2;
-var endY = window.innerHeight / 2;
 document
   .getElementsByTagName('body')[0]
   .addEventListener('mousemove', function (n) {
@@ -9,11 +7,8 @@ document
       (e.style.top = n.clientY + 'px'),
       (i.style.left = n.clientX + 'px'),
       (i.style.top = n.clientY + 'px'),
-      // Position the dot
-      (this.endX = n.pageX),
-      (this.endY = n.pageY),
-      ($dot.style.left = this.endX + 'px'),
-      ($dot.style.top = this.endY + 'px');
+      ($dot.style.left = n.clientX + 'px'),
+      ($dot.style.top = n.clientY + 'px');
   });
 
 var t = document.getElementById('cursor'),
