@@ -120,12 +120,12 @@ body.img-4-wrap .cursor2,.cursor3{
   background-color: red;
   transition: height 250ms ease;
   mix-blend-mode: difference;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .hover-target:hover:before{
   height: 100%;
 }
 .hover-target:hover{
-  z-index: 5;
+  z-index: 9;
   color: red;
 }
