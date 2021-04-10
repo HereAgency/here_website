@@ -112,7 +112,8 @@ body.img-4-wrap .cursor2,.cursor3{
   color: red;
   transition: color 250ms ease;
 }
-.hover-target:before{
+//links background
+a.hover-target:before{
   position: absolute;
   content: '';
   height: 0;
