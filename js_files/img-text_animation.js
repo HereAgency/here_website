@@ -107,7 +107,9 @@ $('document').ready(function () {
 
   //local timeline
   var tl = gsap.timeline();
-  tl.to(reveal, {
+  tl.to(
+    reveal, 
+    {
     duration: 0.01,
     opacity: 1,
   })
@@ -126,8 +128,7 @@ $('document').ready(function () {
     .to(
       img,
       {
-        duration: 1,
-        ease: Power4.easeOut,
+        duration: 0.01,
         opacity: 1,
       },
       '>'
