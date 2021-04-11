@@ -40,13 +40,14 @@ $('document').ready(function () {
   });
   // GSAP timeline to animate the text
   tlTextHeader
-    .to(text, {
-      duration: 0.5,
-      opacity: 1,
-    })
     .to(navbarItems, {
       duration: 1, 
       opacity:1,
+    })
+    .from(navbarItems, {
+      y: -50, 
+      duration: 1
+      // ease: 'power4',
     }, '<')
     .from(navbarItems, {
       duration: 1,
