@@ -27,7 +27,7 @@ $('document').ready(function () {
   //local timeline
   var tlTextHeader = gsap.timeline();
 
-  var navbarItems = document.querySelectorAll('.navbar a');
+  var navbarItems = document.querySelectorAll('.nav-item-fadein');
   var text = document.querySelectorAll('.text-animation-header');
   var splitLine = document.querySelector('.split-child');
  
