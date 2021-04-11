@@ -44,10 +44,10 @@
 					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
 
-				document.body.classList.add('layout-switch');
-				console.log('added .layout-switch');
 				window.removeEventListener('scroll', noscroll);
-				console.log('removed noscroll');
+				document.body.classList.add('layout-switch');
+
+
 			};
 
 			if (support.animations) {
