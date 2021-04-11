@@ -45,7 +45,9 @@
 				}
 
 				document.body.classList.add('layout-switch');
+				console.log('added .layout-switch');
 				window.removeEventListener('scroll', noscroll);
+				console.log('removed noscroll');
 			};
 
 			if (support.animations) {
