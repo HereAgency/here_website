@@ -1,4 +1,3 @@
-
 /* #Cursor
 ================================================== */
 html{
@@ -7,54 +6,37 @@ cursor:none;
 a{
 cursor:none;
 }
-.cursor-dot,
-.cursor,
-.cursor2,
-.cursor3{
-  z-index:999;
-}
-/* .cursor-dot, */
-.cursor,
-.cursor2,
-.cursor3{
-  position: fixed;
-  border-radius: 50%; 
-  transform: translateX(-50%) translateY(-50%);
-  pointer-events: none;
-  left: -100px;
-  top: 50%;
-  z-index: 4;
-  transition: all 200ms ease-out;
-}
+
+.cursor-img,
+.cursor-arrow,
 .cursor-dot{
   position: fixed;
-  border-radius: 50%; 
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
   pointer-events: none;
-  left: 50px;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  background-color: red;
   z-index:5;
+}
+.cursor-dot{
+  width: 50px;
+  height: 50px;
+  background-color: red;
   opacity:1;
+}
+.cursor-img{
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: 0 0;
+}
+.cursor-img,
+.cursor-arrow{
+  transition: all 200ms ease-out;
 }
 .cursor-dot.hover{
   opacity:0;
   z-index:1;
 }
-.cursor{
-  background-color: var(--blue);
-  height: 0;
-  width: 0;
-}
-.cursor2,.cursor3{
-  height: 50px;
-  width: 50px;
-  transition: all 200ms ease-out;
-  background-position: center;
-  background-size: 0 0;
-}
-.cursor2.hover{
+.cursor-img.hover{
   height: 220px;
   width: 320px;
   border:none;
@@ -62,41 +44,19 @@ cursor:none;
   background-size: cover;
   z-index:1;
 }
-.cursor3{
-  background-color:red;
-  border: 2px solid red;
-  opacity:0.5;
+body.img-1-wrap .cursor-img{
+  background-image: url('https://assets.website-files.com/60642960db4de36211d8b080/60642960db4de32c21d8b097_bushfire-help-tile.svg');
 }
-.cursor3.hover{
-  opacity:0;
+body.img-2-wrap .cursor-img{
+  background-image: url('https://assets.website-files.com/60642960db4de36211d8b080/60642960db4de38f56d8b099_fayt-tile.jpg');
 }
-/* .cursor__circle{
-  width: 64px;
-  height: 64px;
-  margin-top: -50%;
-  margin-left: -50%;
-  border-radius: 50%;
-  border: solid 1px rgba(227, 222, 193, 0.64);
-  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-} */
-
-body.img-1-wrap .cursor2{
-  background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
-}
-body.img-2-wrap .cursor2{
-  background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
-}
-body.img-3-wrap .cursor2{
+body.img-3-wrap .cursor-img{
   background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
 }
-body.img-4-wrap .cursor2{
+body.img-4-wrap .cursor-img{
   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
 }
-body.arrow .cursor3.hover{
+body.arrow .cursor-arrow.hover{
   height: 64px;
   width: 64px;
   transform: scale(2) translateX(-25%) translateY(-25%);
@@ -105,7 +65,7 @@ body.arrow .cursor3.hover{
   z-index:6;
   opacity:0.5;
 }
-body.arrow .cursor3.hover:after{
+body.arrow .cursor-arrow.hover:after{
   content: '';
   position: absolute;
   left: 0%;
@@ -122,11 +82,11 @@ a.hover-target{
   position: relative;
   display: inline-block;
   text-decoration: underline;
-  color: #fff;
+  color: grey;
   transition: color 250ms ease;
 }
 a.hover-target:hover{
-  z-index:5;
+  z-index:4;
   color:#fff;
 }
 a.hover-target:before{
@@ -147,3 +107,4 @@ a.hover-target:before{
 a.hover-target:hover:before{
   height: 100%;
 }
+
