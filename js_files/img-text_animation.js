@@ -25,7 +25,7 @@ $('document').ready(function () {
 
   function textHeader() {
   //Hide loader div
-  document.querySelector('.ip-container').style.display= "none";
+  //   document.querySelector('.ip-container').style.display= "none";
   
     
   //local timeline
