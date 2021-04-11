@@ -43,10 +43,9 @@
 					if (ev.target !== header) return;
 					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
-				console.log('This works');
-
-				window.removeEventListener('scroll', noscroll);
+				container.style.display= "none";
 				document.body.classList.add('layout-switch');
+				window.removeEventListener('scroll', noscroll);
 
 
 			};
