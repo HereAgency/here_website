@@ -91,9 +91,9 @@
 .layout-switch .ip-header {
 	position: absolute;
 }
-.layout-switch .ip-container{
+/* .layout-switch .ip-container{
 	display: none;
-}
+} */
 /* No JS */
 .no-js .ip-header {
 	position: relative;
