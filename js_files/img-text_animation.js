@@ -1,5 +1,5 @@
 $('document').ready(function () {
-  Triggers the header animation after 3s (until the loading animation is finished)
+//   Triggers the header animation after 3s (until the loading animation is finished)
   setTimeout(() => {
     textHeader();
   }, 3000);
