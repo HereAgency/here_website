@@ -45,11 +45,6 @@ $('document').ready(function () {
       opacity:1,
     })
     .from(navbarItems, {
-      y: -50, 
-      duration: 1
-      // ease: 'power4',
-    }, '<')
-    .from(navbarItems, {
       duration: 1,
       y: -50,
       ease: 'power4',
@@ -88,16 +83,12 @@ $('document').ready(function () {
       duration: 0.2,
       opacity: 1,
     })
-    .from(
-      childSplit.lines,
-      {
-        duration: 0.6,
-        yPercent: 100,
-        ease: 'power4',
-        stagger: 0.15,
-      },
-      '>'
-    );
+    .from(childSplit.lines,{
+      duration: 0.6,
+      yPercent: 100,
+      ease: 'power4',
+      stagger: 0.15,
+    },'>');
   }
 
   function revealImage(element) {
