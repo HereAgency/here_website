@@ -6,35 +6,28 @@ cursor:none;
 a{
 cursor:none;
 }
-
 .cursor-img,
-.cursor-arrow,
 .cursor-dot{
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   pointer-events: none;
   z-index:5;
+  width: 50px;
+  height: 50px;
 }
 .cursor-dot{
-  width: 50px;
-  height: 50px;
   background-color: red;
-  opacity:1;
-}
-.cursor-img{
-  height: 50px;
-  width: 50px;
-  background-position: center;
-  background-size: 0 0;
-}
-.cursor-img,
-.cursor-arrow{
-  transition: all 200ms ease-out;
+  opacity:0.8;
+  transition: transform 200ms ease-out;
 }
 .cursor-dot.hover{
-  opacity:0;
   z-index:1;
+}
+.cursor-img{
+  background-position: center;
+  background-size: 0 0;
+  transition: all 200ms ease-out;
 }
 .cursor-img.hover{
   height: 220px;
@@ -56,7 +49,8 @@ body.img-3-wrap .cursor-img{
 body.img-4-wrap .cursor-img{
   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
 }
-body.arrow .cursor-arrow.hover{
+/* body.arrow .cursor-arrow.hover{ */
+body.arrow .cursor-dot.hover{
   height: 64px;
   width: 64px;
   transform: scale(2) translateX(-25%) translateY(-25%);
@@ -65,7 +59,8 @@ body.arrow .cursor-arrow.hover{
   z-index:6;
   opacity:0.5;
 }
-body.arrow .cursor-arrow.hover:after{
+/* body.arrow .cursor-arrow.hover:after{ */
+body.arrow .cursor-dot.hover:after{
   content: '';
   position: absolute;
   left: 0%;
@@ -107,4 +102,3 @@ a.hover-target:before{
 a.hover-target:hover:before{
   height: 100%;
 }
-
