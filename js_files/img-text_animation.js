@@ -44,10 +44,9 @@ $('document').ready(function () {
       duration: 0.5,
       opacity: 1,
     })
-    .fromTo(navbarItems, {
-      opacity:0},
-      {duration: 1, 
-       opacity:1,
+    .to(navbarItems, {
+      duration: 1, 
+      opacity:1,
     }, '<')
     .from(navbarItems, {
       duration: 1,
