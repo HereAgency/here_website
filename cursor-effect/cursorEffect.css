@@ -7,6 +7,12 @@ cursor:none;
 a{
 cursor:none;
 }
+.cursor-dot,
+.cursor,
+.cursor2,
+.cursor3{
+  z-index:999;
+}
 /* .cursor-dot, */
 .cursor,
 .cursor2,
