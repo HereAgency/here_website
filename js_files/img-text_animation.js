@@ -50,7 +50,7 @@ $('document').ready(function () {
     }, '<')
     .from(navbarItems, {
       duration: 1,
-      yPercent: -100,
+      y: -50,
       ease: 'power4',
     }, '<')
     .from(childSplit.lines, {
