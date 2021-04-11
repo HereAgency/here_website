@@ -27,7 +27,7 @@ $('document').ready(function () {
   //local timeline
   var tlTextHeader = gsap.timeline();
 
-  var navbarItems = document.querySelectorAll('.nav-item-fadeIn');
+  var navbarItems = document.querySelectorAll('.navbar a');
   var text = document.querySelectorAll('.text-animation-header');
   var splitLine = document.querySelector('.split-child');
  
@@ -44,15 +44,15 @@ $('document').ready(function () {
       duration: 0.5,
       opacity: 1,
     })
-    .to(navbarItems, {
-      duration:0.7,
-      opacity:1,
+    .fromTo(navbarItems, {
+      opacity:0},
+      {duration: 1, 
+       opacity:1,
     }, '<')
     .from(navbarItems, {
       duration: 1,
       yPercent: -100,
       ease: 'power4',
-      ease: Power4.easeOut,
     }, '<')
     .from(childSplit.lines, {
       duration: 1,
