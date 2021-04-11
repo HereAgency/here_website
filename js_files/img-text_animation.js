@@ -126,7 +126,8 @@ $('document').ready(function () {
     .to(
       img,
       {
-        duration: 0.01,
+        duration: 1,
+        ease: Power4.easeOut,
         opacity: 1,
       },
       '>'

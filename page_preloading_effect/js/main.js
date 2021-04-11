@@ -1,13 +1,4 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2014, Codrops
- * http://www.codrops.com
- */
+
 (function() {
 
 	var support = 
@@ -43,8 +34,6 @@
 		// simulate loading something.. (logo for 2s)
 		interval = setInterval(function () {
 			
-			// classie.remove(container, 'loading');
-			// classie.add(container, 'loaded');
 			container.classList.remove('loading');
 			container.classList.add('loaded');
 			clearInterval(interval);
@@ -55,7 +44,6 @@
 					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
 
-				// classie.add(document.body, 'layout-switch');
 				document.body.classList.add('layout-switch');
 				window.removeEventListener('scroll', noscroll);
 			};
@@ -65,7 +53,7 @@
 			} else {
 				onEndHeaderAnimation();
 			}
-		}, 2500);
+		}, 2600);
 	}	
 	function noscroll() {
 		window.scrollTo( 0, 0 );
