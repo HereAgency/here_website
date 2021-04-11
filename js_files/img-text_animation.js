@@ -1,8 +1,8 @@
 $('document').ready(function () {
-//   Triggers the header animation after 3s (until the loading animation is finished)
+//   Triggers the header animation after 4s (We're gonna change how we trigger the header animation)
   setTimeout(() => {
     textHeader();
-  }, 3000);
+  }, 4000);
 
   //Triggers images and texts (only once) when in viewport:
   inView('.text-wrapper').on('enter', function (elText) {
