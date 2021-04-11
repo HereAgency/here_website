@@ -57,6 +57,7 @@
 		var tlTextHeader = gsap.timeline();
 		//Selectors
 		var navbarItems = document.querySelectorAll('.nav-item-fadeIn');
+		console.log(navbarItems);
 		var text = document.querySelectorAll('.text-animation-header');
 		var splitLine = document.querySelector('.text-animation-header .split-child');
 		
