@@ -49,6 +49,10 @@ $('document').ready(function () {
       y: -50,
       ease: 'power4',
     }, '<')
+    .to(text, {
+      duration:1,
+      opacity: 1,
+    },'<')
     .from(childSplit.lines, {
       duration: 1,
       yPercent: 100,
