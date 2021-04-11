@@ -1,8 +1,8 @@
 $('document').ready(function () {
 //   Triggers the header animation after 4s (We're gonna change how we trigger the header animation)
-  setTimeout(() => {
-    textHeader();
-  }, 4000);
+//   setTimeout(() => {
+//     textHeader();
+//   }, 4000);
 
   //Triggers images and texts (only once) when in viewport:
   inView('.text-wrapper').on('enter', function (elText) {
@@ -23,47 +23,47 @@ $('document').ready(function () {
     }
   });
 
-  function textHeader() {
-  //Hide loader div
-    document.querySelector('.ip-container').style.display= "none";
-    window.removeEventListener('scroll', noscroll);
+//   function textHeader() {
+//   //Hide loader div
+//     document.querySelector('.ip-container').style.display= "none";
+//     window.removeEventListener('scroll', noscroll);
     
-  //local timeline
-  var tlTextHeader = gsap.timeline();
+//   //local timeline
+//   var tlTextHeader = gsap.timeline();
 
-  var navbarItems = document.querySelectorAll('.nav-item-fadein');
-  var text = document.querySelectorAll('.text-animation-header');
-  var splitLine = document.querySelector('.split-child');
+//   var navbarItems = document.querySelectorAll('.nav-item-fadein');
+//   var text = document.querySelectorAll('.text-animation-header');
+//   var splitLine = document.querySelector('.split-child');
  
-  const childSplit = new SplitText(text, {
-    type: 'lines',
-    linesClass: 'split-child',
-  });
-  const parentSplit = new SplitText(text, {
-    linesClass: 'split-parent',
-  });
-  // GSAP timeline to animate the text
-  tlTextHeader
-    .to(navbarItems, {
-      duration: 1, 
-      opacity:1,
-    })
-    .from(navbarItems, {
-      duration: 1,
-      y: -50,
-      ease: 'power4',
-    }, '<')
-    .to(text, {
-      duration:1,
-      opacity: 1,
-    },'<')
-    .from(childSplit.lines, {
-      duration: 1,
-      yPercent: 100,
-      ease: 'power4',
-      stagger: 0.15,
-    }, '<' );
-  }
+//   const childSplit = new SplitText(text, {
+//     type: 'lines',
+//     linesClass: 'split-child',
+//   });
+//   const parentSplit = new SplitText(text, {
+//     linesClass: 'split-parent',
+//   });
+//   // GSAP timeline to animate the text
+//   tlTextHeader
+//     .to(navbarItems, {
+//       duration: 1, 
+//       opacity:1,
+//     })
+//     .from(navbarItems, {
+//       duration: 1,
+//       y: -50,
+//       ease: 'power4',
+//     }, '<')
+//     .to(text, {
+//       duration:1,
+//       opacity: 1,
+//     },'<')
+//     .from(childSplit.lines, {
+//       duration: 1,
+//       yPercent: 100,
+//       ease: 'power4',
+//       stagger: 0.15,
+//     }, '<' );
+//   }
 
   function textTrigger(element) {
   //local timeline
