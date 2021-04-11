@@ -125,13 +125,6 @@ $('document').ready(function () {
       '>'
     )
     // Make the image visibile
-    .from(
-      img,
-      {
-        opacity: 0,
-      },
-      '>'
-    )
     .to(
       img,
       {
