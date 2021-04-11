@@ -10,7 +10,8 @@
  */
 (function() {
 
-	var support = { animations : Modernizr.cssanimations },
+	var support = 
+		{ animations : Modernizr.cssanimations },
 		container = document.querySelector( '.ip-container' ),
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
@@ -28,7 +29,8 @@
 		window.addEventListener( 'scroll', noscroll );
 
 		// initial animation
-		classie.add( container, 'loading' );
+		// classie.add( container, 'loading' );
+		container.classList.add('loading');
 
 		if( support.animations ) {
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
@@ -40,17 +42,21 @@
 	function startLoading() {
 		// simulate loading something.. (logo for 2s)
 		interval = setInterval(function () {
-			classie.remove(container, 'loading');
-			classie.add(container, 'loaded');
+			
+			// classie.remove(container, 'loading');
+			// classie.add(container, 'loaded');
+			container.classList.remove('loading');
+			container.classList.add('loaded');
 			clearInterval(interval);
 
 			var onEndHeaderAnimation = function (ev) {
 				if (support.animations) {
-				if (ev.target !== header) return;
-				this.removeEventListener(animEndEventName, onEndHeaderAnimation);
+					if (ev.target !== header) return;
+					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
 
-				classie.add(container, 'layout-switch');
+				// classie.add(document.body, 'layout-switch');
+				document.body.classList.add('layout-switch');
 				window.removeEventListener('scroll', noscroll);
 			};
 
@@ -59,7 +65,7 @@
 			} else {
 				onEndHeaderAnimation();
 			}
-		}, 1600);
+		}, 2500);
 	}	
 	function noscroll() {
 		window.scrollTo( 0, 0 );
