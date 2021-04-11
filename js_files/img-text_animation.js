@@ -24,6 +24,11 @@ $('document').ready(function () {
   });
 
   function textHeader() {
+  //Hide loader div
+  .ip-container{
+    display: none;
+  } 
+    
   //local timeline
   var tlTextHeader = gsap.timeline();
 
