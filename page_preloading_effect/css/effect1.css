@@ -1,3 +1,4 @@
+
 .ip-container .ip-header {
 	position: fixed;
 	top: 0;
@@ -6,9 +7,12 @@
 	width: 100%;
 	height: 100%;
 	background: #232324;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 .ip-container .ip-logo{
-	position: absolute;
+	position: relative;
 	margin: 0;
 	top: 0;
 	left: 0;
@@ -16,13 +20,12 @@
 	height: 100%;
 	cursor: default;
 	pointer-events: none;
-	-webkit-transform: translate3d(0,25%,0);
-	transform: translate3d(0,25%,0);
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
 	opacity: 0;
-}
-.ip-header .ip-inner {
-	display: block;
-	margin: 0 auto;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 .ip-header .ip-logo img {
 	min-width: 320px;
@@ -39,10 +42,10 @@
 	animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
 }
 @-webkit-keyframes animInitialHeader {
-	from { opacity: 0; -webkit-transform: translate3d(0,800px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,150px,0); }
 }
 @keyframes animInitialHeader {
-	from { opacity: 0; -webkit-transform: translate3d(0,800px,0); transform: translate3d(0,800px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,150px,0); transform: translate3d(0,150px,0); }
 }
 
 /* Header elements when loading finishes */
