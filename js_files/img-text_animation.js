@@ -27,13 +27,10 @@ $('document').ready(function () {
   //local timeline
   var tlTextHeader = gsap.timeline();
 
+  var navbar = document.querySelectorAll('.navbar');
   var text = document.querySelectorAll('.text-animation-header');
   var splitLine = document.querySelector('.split-child');
-  //SplitText to work with animation line by line
-  // const childSplit = nestedLinesSplit(text, {
-  //   type: "lines",
-  //   linesClass: "split-child"
-  // });
+ 
   const childSplit = new SplitText(text, {
     type: 'lines',
     linesClass: 'split-child',
@@ -42,23 +39,27 @@ $('document').ready(function () {
     linesClass: 'split-parent',
   });
   // GSAP timeline to animate the text
-  //Make the text appear first
-
   tlTextHeader
     .to(text, {
       duration: 0.5,
       opacity: 1,
     })
-    .from(
-      childSplit.lines,
-      {
-        duration: 1,
-        yPercent: 100,
-        ease: 'power4',
-        stagger: 0.15,
-      },
-      '>'
-    );
+    .to(navbar, {
+      duration:0.5,
+      opacity:1,
+    }, '<')
+    .from(navbar, {
+      duration: 1,
+      transform: 'scale3d(1,0,1)',
+      transformOrigin: '50% 100%',
+      ease: Power4.easeOut,
+    }, '>')
+    .from(childSplit.lines, {
+      duration: 1,
+      yPercent: 100,
+      ease: 'power4',
+      stagger: 0.15,
+    }, '<' );
   }
 
   function textTrigger(element) {
