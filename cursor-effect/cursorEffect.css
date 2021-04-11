@@ -54,6 +54,7 @@ cursor:none;
   border:none;
   border-radius: 8px;
   background-size: cover;
+  z-index:1;
 }
 .cursor3{
   background-color:red;
@@ -114,9 +115,13 @@ body.arrow .cursor3.hover:after{
 a.hover-target{
   position: relative;
   display: inline-block;
-  text-decoration: none;
-  color: var(--purple);
+  text-decoration: underline;
+  color: #fff;
   transition: color 250ms ease;
+}
+a.hover-target:hover{
+  z-index:5;
+  color:#fff;
 }
 a.hover-target:before{
   position: absolute;
@@ -135,8 +140,4 @@ a.hover-target:before{
 }
 a.hover-target:hover:before{
   height: 100%;
-}
-a.hover-target:hover{
-  z-index:5;
-  color:#fff;
 }
