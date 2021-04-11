@@ -50,9 +50,8 @@ $('document').ready(function () {
     }, '<')
     .from(navbar, {
       duration: 1,
-      transform: 'scale3d(1,0,1)',
-      transformOrigin: '50% 100%',
-      ease: Power4.easeOut,
+      transform: 'translateY(50px)',
+      ease: 'Power4',
     }, '>')
     .from(childSplit.lines, {
       duration: 1,
