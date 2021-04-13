@@ -4,25 +4,7 @@ $('document').ready(function () {
 //     textHeader();
 //   }, 4000);
 
-  //Triggers images and texts (only once) when in viewport:
-  inView('.text-wrapper').on('enter', function (elText) {
-    if (elText.classList.contains('hasClassTriggered')) {
-      return;
-    } else {
-      textTrigger(elText);
-      elText.classList.add('hasClassTriggered');
-    }
-  });
-  inView.threshold(0.2);
-  inView('.image-wrapper').on('enter', function (elImg) {
-    if (elImg.classList.contains('hasClassTriggered')) {
-      return;
-    } else {
-      revealImage(elImg);
-      elImg.classList.add('hasClassTriggered');
-    }
-  });
-
+  
 //   function textHeader() {
 //   //Hide loader div
 //     document.querySelector('.ip-container').style.display= "none";
@@ -64,6 +46,74 @@ $('document').ready(function () {
 //       stagger: 0.15,
 //     }, '<' );
 //   }
+  
+  //Triggers images and texts (only once) when in viewport:
+  inView('.text-wrapper').on('enter', function (elText) {
+    if (elText.classList.contains('hasClassTriggered')) {
+      return;
+    } else {
+      textTrigger(elText);
+      elText.classList.add('hasClassTriggered');
+    }
+  });
+  inView.threshold(0.2);
+  inView('.image-wrapper').on('enter', function (elImg) {
+    if (elImg.classList.contains('hasClassTriggered')) {
+      return;
+    } else {
+      revealImage(elImg);
+      elImg.classList.add('hasClassTriggered');
+    }
+  });
+
+  //PAGE TRANSITION ANIMATION - TRIGGERED WHEN CLICK ON ANY LINK
+  let links = document.querySelectorAll('a');
+  if (links){
+    links.forEach ((link) => {
+      link.onclick = (e) => {
+        console.log('link clicked');
+        let body = document.querySelector('body');
+        e.preventDefault();
+        pageAnimation(e);
+      }
+    });
+  }
+  function pageAnimation(e){
+    let pageLoader = document.querySelector('.pg-trans-anim');
+    let pgTl = gsap.timeline();
+    
+    pgTl
+      .to(pageLoader, {
+        duration: 0.01,
+        display: 'block'
+      })
+      .from(pageLoader,{
+        duration: 0.8,
+        transform: 'scale3d(1,0,1)',
+        transformOrigin: '50% 100%',
+        ease: Power4.easeOut,
+       },'>')
+        //Animate the reveal box from full height to the top with no height
+      .to(pageLoader, {
+        duration: 0.8,
+        transform: 'scale3d(1,0,1)',
+        transformOrigin: '50% 0%',
+        ease: Power4.easeOut,
+        onComplete: function(){
+           console.log('navigating');
+           if (!e.srcElement.parentElement.href){
+             window.location = e.srcElement.href;
+           }else {
+             window.location = e.srcElement.parentElement.href;
+           }
+        }
+      },'>')
+      .to(pageLoader,{
+        duration:0.01,
+        display:'none'
+      }, '>');
+  }
+  // ******END PAGE TRANSITION******
 
   function textTrigger(element) {
   //local timeline
