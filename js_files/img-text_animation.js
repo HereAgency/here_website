@@ -96,7 +96,7 @@ $('document').ready(function () {
         display: 'block'
       })
       .from(pageLoader,{
-        duration: 1,
+        duration: 0.7,
         transform: 'scale3d(1,0,1)',
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
