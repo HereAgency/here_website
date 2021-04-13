@@ -96,7 +96,7 @@ $('document').ready(function () {
         display: 'block'
       })
       .from(pageLoader,{
-        duration: 0.8,
+        duration: 1,
         transform: 'scale3d(1,0,1)',
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
@@ -113,7 +113,7 @@ $('document').ready(function () {
 //         ease: Power4.easeOut,
 //       },'>')
       .to(pageLoader,{
-        duration:0.01,
+        duration:1,
         display:'none'
       }, '>');
   }
