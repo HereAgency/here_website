@@ -65,6 +65,7 @@ $('document').ready(function () {
       elImg.classList.add('hasClassTriggered');
     }
   });
+  
 //PAGE TRANSITION LOADING ANIMATION
   let links = document.querySelectorAll('a');
   if (links){
@@ -99,10 +100,6 @@ $('document').ready(function () {
         transform: 'scale3d(1,0,1)',
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
-        onComplete: function(){
-          console.log('navigating');
-          window.location = linkURL;
-        }
        },'>')
         //Animate the reveal box from full height to the top with no height
       .to(pageLoader, {
@@ -110,13 +107,17 @@ $('document').ready(function () {
         transform: 'scale3d(1,0,1)',
         transformOrigin: '50% 0%',
         ease: Power4.easeOut,
+        onComplete: function(){
+          console.log('navigating');
+          window.location = linkURL;
+        }
       },'>')
       .to(pageLoader,{
         duration:0.01,
         display:'none'
       }, '>');
   }
-  // ******END PAGE TRANSITION******
+  // ******END PAGE ANIMATION ***********
 
   function textTrigger(element) {
   //local timeline
