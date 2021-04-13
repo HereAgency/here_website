@@ -1,8 +1,9 @@
-
-document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+if(document.body.classList.contains('layout-switch'){
+  document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
 	t.style.left = e.style.left = n.clientX + "px",
 	e.style.top = t.style.top = n.clientY + "px"
 });
+}
 
 var t = document.getElementById("cursor-dot"),
     e = document.getElementById("cursor-img");
