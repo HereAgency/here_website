@@ -100,18 +100,18 @@ $('document').ready(function () {
         transform: 'scale3d(1,0,1)',
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
-       },'>')
-        //Animate the reveal box from full height to the top with no height
-      .to(pageLoader, {
-        duration: 0.8,
-        transform: 'scale3d(1,0,1)',
-        transformOrigin: '50% 0%',
-        ease: Power4.easeOut,
         onComplete: function(){
           console.log('navigating');
           window.location = linkURL;
         }
-      },'>')
+       },'>')
+        //Animate the reveal box from full height to the top with no height
+//       .to(pageLoader, {
+//         duration: 0.8,
+//         transform: 'scale3d(1,0,1)',
+//         transformOrigin: '50% 0%',
+//         ease: Power4.easeOut,
+//       },'>')
       .to(pageLoader,{
         duration:0.01,
         display:'none'
