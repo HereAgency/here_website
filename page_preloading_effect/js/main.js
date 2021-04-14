@@ -50,9 +50,12 @@
 		}, 2600);
 	}
   	function textHeader() {
-		//Don't display preloader div:
+		//Hide preloader div:
 		const preLoaderDiv = document.querySelector('.ip-container');
 		preLoaderDiv.style.display = "none";
+		//Fade in header image -CS page:
+		document.querySelector('.cs-fayt-header-img').fadeIn();
+		
 		//local timeline
 		var tlTextHeader = gsap.timeline();
 		//Selectors
