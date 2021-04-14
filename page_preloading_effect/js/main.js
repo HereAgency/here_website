@@ -53,14 +53,15 @@
 		//Hide preloader div:
 		const preLoaderDiv = document.querySelector('.ip-container');
 		preLoaderDiv.style.display = "none";
-		//Fade in header image -CS page:
-		document.querySelector('.cs-fayt-header-img').fadeIn();
 		
 		//local timeline
 		var tlTextHeader = gsap.timeline();
 		//Selectors
+		
+		//Fade in header image -CS page:
+		let imgHeader = document.querySelector('.cs-fayt-header-img');
+		console.log(imgHeader);
 		var navbarItems = document.querySelectorAll('.navbar .nav-item-fadein');
-		console.log(navbarItems);
 		var text = document.querySelectorAll('.text-animation-header');
 		var splitLine = document.querySelector('.text-animation-header .split-child');
 		
@@ -90,6 +91,10 @@
 				yPercent: 100,
 				ease: 'power4',
 				stagger: 0.15,
+			}, '<' )
+			.to(imgHeader, {
+				duration:1,
+				opacity: 1,
 			}, '<' );
   	}
 	function noscroll() {
