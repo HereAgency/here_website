@@ -28,7 +28,8 @@
 	}
 	function startLoading() {
 		// simulate loading something.. (logo for 2s)
-		interval = setInterval(function () {
+		let time = 2600;
+		setTimeout(function (time) {
 			container.classList.remove('loading');
 			container.classList.add('loaded');
 			clearInterval(interval);
@@ -47,7 +48,7 @@
 			} else {
 				onEndHeaderAnimation();
 			}
-		}, 2600);
+		}, time);
 	}
   	function textHeader() {
 		//Hide preloader div:
