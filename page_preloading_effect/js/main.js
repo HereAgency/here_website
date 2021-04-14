@@ -30,7 +30,12 @@
 	}
 	function startLoading() {
 		// simulate loading something.. (logo for 2s)
-		let time = 2600;
+		let time;
+		if(pageName === 'home'){
+			time=2600;
+		} else {
+			time=700;
+		}
 		setTimeout(function (time) {
 			container.classList.remove('loading');
 			container.classList.add('loaded');
