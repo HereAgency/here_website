@@ -1,70 +1,4 @@
-$('document').ready(function () {
-//   Triggers the header animation after 4s (We're gonna change how we trigger the header animation)
-//   setTimeout(() => {
-//     textHeader();
-//   }, 4000);
-
-  
-//   function textHeader() {
-//   //Hide loader div
-//     document.querySelector('.ip-container').style.display= "none";
-//     window.removeEventListener('scroll', noscroll);
-    
-//   //local timeline
-//   var tlTextHeader = gsap.timeline();
-
-//   var navbarItems = document.querySelectorAll('.nav-item-fadein');
-//   var text = document.querySelectorAll('.text-animation-header');
-//   var splitLine = document.querySelector('.split-child');
- 
-//   const childSplit = new SplitText(text, {
-//     type: 'lines',
-//     linesClass: 'split-child',
-//   });
-//   const parentSplit = new SplitText(text, {
-//     linesClass: 'split-parent',
-//   });
-//   // GSAP timeline to animate the text
-//   tlTextHeader
-//     .to(navbarItems, {
-//       duration: 1, 
-//       opacity:1,
-//     })
-//     .from(navbarItems, {
-//       duration: 1,
-//       y: -50,
-//       ease: 'power4',
-//     }, '<')
-//     .to(text, {
-//       duration:1,
-//       opacity: 1,
-//     },'<')
-//     .from(childSplit.lines, {
-//       duration: 1,
-//       yPercent: 100,
-//       ease: 'power4',
-//       stagger: 0.15,
-//     }, '<' );
-//   }
-  
-  //Triggers images and texts (only once) when in viewport:
-  inView('.text-wrapper').on('enter', function (elText) {
-    if (elText.classList.contains('hasClassTriggered')) {
-      return;
-    } else {
-      textTrigger(elText);
-      elText.classList.add('hasClassTriggered');
-    }
-  });
-  inView.threshold(0.2);
-  inView('.image-wrapper').on('enter', function (elImg) {
-    if (elImg.classList.contains('hasClassTriggered')) {
-      return;
-    } else {
-      revealImage(elImg);
-      elImg.classList.add('hasClassTriggered');
-    }
-  });
+$('document').ready(function () {  
   
 //PAGE TRANSITION LOADING ANIMATION
   let links = document.querySelectorAll('a');
@@ -118,11 +52,31 @@ $('document').ready(function () {
       }, '>');
   }
   // ******END PAGE ANIMATION ***********
+  
+  //Triggers images and texts (only once) when in viewport:
+  inView.threshold(0.2);//triggers when element is 20% in viewport
+  inView('.text-wrapper').on('enter', function (elText) {
+    if (elText.classList.contains('hasClassTriggered')) {
+      return;
+    } else {
+      textTrigger(elText);
+      elText.classList.add('hasClassTriggered');
+    }
+  });
+  inView('.image-wrapper').on('enter', function (elImg) {
+    if (elImg.classList.contains('hasClassTriggered')) {
+      return;
+    } else {
+      revealImage(elImg);
+      elImg.classList.add('hasClassTriggered');
+    }
+  });
+  
 
   function textTrigger(element) {
   //local timeline
   var tlText = gsap.timeline();
-
+  let preTitle = element.querySelector('.title-animation');
   var text = element.querySelector('.text-animation');
   var splitLine = element.querySelector('.split-child');
   //SplitText to work with animation line by line
@@ -145,12 +99,16 @@ $('document').ready(function () {
       duration: 0.2,
       opacity: 1,
     })
+    .to(preTitle, {
+      duration: 1,
+      opacity: 1,
+    }, '>')
     .from(childSplit.lines,{
       duration: 0.6,
       yPercent: 100,
       ease: 'power4',
       stagger: 0.15,
-    },'>');
+    },'<');
   }
 
   function revealImage(element) {
