@@ -2,10 +2,12 @@
 (function() {
 	var support = 
 		{ animations : Modernizr.cssanimations },
+	    	pageName = document.querySelector('[page-name]').getAttribute('page-name'),
 		container = document.querySelector( '.ip-container' ),
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
+	console.log(pageName);
 	function init() {
 		var onEndInitialAnimation = function() {
 			if( support.animations ) {
