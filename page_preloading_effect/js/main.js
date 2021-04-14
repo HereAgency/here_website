@@ -32,7 +32,7 @@
 		setTimeout(function (time) {
 			container.classList.remove('loading');
 			container.classList.add('loaded');
-			clearInterval(interval);
+// 			clearInterval(interval);
 
 			var onEndHeaderAnimation = function (ev) {
 				if (support.animations) {
