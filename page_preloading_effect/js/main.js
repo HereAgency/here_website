@@ -34,7 +34,7 @@
 		if(pageName === 'home'){
 			time=2600;
 		} else {
-			time=700;
+			time=400;
 		}
 		setTimeout(function (time) {
 			container.classList.remove('loading');
