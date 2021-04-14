@@ -100,7 +100,7 @@ $('document').ready(function () {
       opacity: 1,
     })
     .to(preTitle, {
-      duration: 1,
+      duration: 0.7,
       opacity: 1,
     }, '>')
     .from(childSplit.lines,{
