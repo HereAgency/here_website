@@ -22,11 +22,11 @@ $(document).ready(function () {
       ease: "power4",
 		}, "<");
     
-    
+    console.log(document.querySelector(hoverImg + imgId + ""));
     // IMAGE MOVEMENT
     this.addEventListener("mousemove", function(n) {
       document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px";
-	console.log(-100 + n.offsetX/3 + "px");
+// 	console.log(-100 + n.offsetX/3 + "px");
     });
     
   });
