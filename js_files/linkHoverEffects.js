@@ -4,6 +4,7 @@ $(document).ready(function () {
   var imgId = 0;
 
   linkTrigger.mouseenter(function() {
+	  console.log('mouseenter');
     imgId = this.id.slice(-1);
 
     // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
@@ -30,6 +31,7 @@ $(document).ready(function () {
     
   });
   linkTrigger.mouseleave(function() {
+	  console.log('mouseleave');
     imgId = this.id.slice(-1);
     
     // IMAGE TRANSLATE AND FADE OUT
@@ -39,7 +41,7 @@ $(document).ready(function () {
 	tl
 	.to(img, {
 		duration: 1,
-		y: -50,
+		y: 50,
 		ease: "power4",
 	})
 	.to(img, {
@@ -48,7 +50,7 @@ $(document).ready(function () {
 	}, "<")
   	.to(img, {
 		duration: 0.01,
-		y: 50,
+		y: 0,
 		ease: "power4",
 	}, ">");
   });
