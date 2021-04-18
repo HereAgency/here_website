@@ -25,7 +25,7 @@ $(document).ready(function () {
     console.log(document.querySelector(hoverImg + imgId + ""));
     // IMAGE MOVEMENT
 //     this.addEventListener("mousemove", function(n) {
-      document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px";
+//       document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px";
       document.querySelector(hoverImg + imgId + "").style.left =  n.offsetX+ "px";
 	console.log(-100 + n.offsetX/3 + "px");
     });
