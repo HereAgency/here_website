@@ -18,14 +18,15 @@ $(document).ready(function () {
 		})
     .from(img, {
       duration: 1,
-      y: 100,
+      y: 50,
       ease: "power4",
 		}, "<");
     
     
     // IMAGE MOVEMENT
     document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-      document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px"
+      document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px";
+	console.log(-100 + n.offsetX/3 + "px");
     });
     
   });
@@ -39,7 +40,7 @@ $(document).ready(function () {
 		tl
     .from(img, {
       duration: 1,
-      y: -100,
+      y: -50,
       ease: "power4",
 		})
 		.to(img, {
