@@ -44,7 +44,7 @@ $(document).ready(function () {
 	.to(img, {
 	      duration:0.3,
 	      opacity:0
-	}, "<")
+	}, "<");
 //   	.to(img, {
 // 		duration: 0.01,
 // 		y: -50,
