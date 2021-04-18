@@ -3,12 +3,12 @@ $(document).ready(function () {
   const hoverImg = "#home-hero-image-";
   var imgId = 0;
 
+	var tl = gsap.timeline();
   linkTrigger.mouseenter(function() {
 	  console.log('mouseenter');
     imgId = this.id.slice(-1);
 
     // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
-    var tl = gsap.timeline();
 		var img = document.querySelector(hoverImg + imgId + "");
 		// GSAP timeline to animate the reveal box and the image
     // 		//First make the revealBox visible
@@ -33,24 +33,24 @@ $(document).ready(function () {
   linkTrigger.mouseleave(function() {
 	  console.log('mouseleave');
     imgId = this.id.slice(-1);
-    
+    tl.reverse();
     // IMAGE TRANSLATE AND FADE OUT
-    var tl = gsap.timeline();
-		var img = document.querySelector(hoverImg + imgId + "");
-		// GSAP timeline to animate the reveal box and the image
-	tl
-	.to(img, {
-		duration: 1,
-      		yPercent: 10,
-		ease: "power4",
-	})
-	.to(img, {
-	      duration:0.3,
-	      opacity:0
-	}, "<")
-  	.to(img, {
-		duration: 0.01,
-      		yPercent: -10,
-	}, ">");
+//     var tl = gsap.timeline();
+// 		var img = document.querySelector(hoverImg + imgId + "");
+// 		// GSAP timeline to animate the reveal box and the image
+// 	tl
+// 	.to(img, {
+// 		duration: 1,
+//       		yPercent: 10,
+// 		ease: "power4",
+// 	})
+// 	.to(img, {
+// 	      duration:0.3,
+// 	      opacity:0
+// 	}, "<")
+//   	.to(img, {
+// 		duration: 0.01,
+//       		yPercent: -10,
+// 	}, ">");
   });
 });
