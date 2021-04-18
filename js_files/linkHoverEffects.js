@@ -19,7 +19,7 @@ $(document).ready(function () {
 		})
     .from(img, {
       duration: 1,
-      y: 50,
+      yPercent: 10,
       ease: "power4",
 		}, "<");
     
@@ -41,7 +41,7 @@ $(document).ready(function () {
 	tl
 	.to(img, {
 		duration: 1,
-		y: 50,
+      		yPercent: 10,
 		ease: "power4",
 	})
 	.to(img, {
@@ -50,7 +50,7 @@ $(document).ready(function () {
 	}, "<")
   	.to(img, {
 		duration: 0.01,
-		y: -50,
+      		yPercent: -10,
 	}, ">");
   });
 });
