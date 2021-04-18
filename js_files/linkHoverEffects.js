@@ -50,8 +50,7 @@ $(document).ready(function () {
 	}, "<")
   	.to(img, {
 		duration: 0.01,
-		y: 0,
-		ease: "power4",
+		y: -50,
 	}, ">");
   });
 });
