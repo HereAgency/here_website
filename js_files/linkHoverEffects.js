@@ -24,7 +24,7 @@ $(document).ready(function () {
     
     
     // IMAGE MOVEMENT
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+    this.addEventListener("mousemove", function(n) {
       document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px";
 	console.log(-100 + n.offsetX/3 + "px");
     });
