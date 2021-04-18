@@ -3,25 +3,27 @@ $(document).ready(function () {
   const hoverImg = "#home-hero-image-";
   var imgId = 0;
 
-	var tl = gsap.timeline();
+var tl = gsap.timeline();
+//First make the revealBox visible
+	tl
+	.to(img, {
+duration:0.3,
+opacity:1
+	})
+.from(img, {
+duration: 1,
+yPercent: 10,
+ease: "power4",
+	}, "<");
   linkTrigger.mouseenter(function() {
 	  console.log('mouseenter');
     imgId = this.id.slice(-1);
+	tl.restart();
 
     // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
 		var img = document.querySelector(hoverImg + imgId + "");
 		// GSAP timeline to animate the reveal box and the image
-    // 		//First make the revealBox visible
-		tl
-		.to(img, {
-      duration:0.3,
-      opacity:1
-		})
-    .from(img, {
-      duration: 1,
-      yPercent: 10,
-      ease: "power4",
-		}, "<");
+    // 		
     
     // IMAGE MOVEMENT
 //     this.addEventListener("mousemove", function(n) {
