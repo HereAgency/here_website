@@ -16,9 +16,9 @@ $(document).ready(function () {
       duration:0.3,
       opacity:1
 		})
-    .from(img, {
+    .fromTo(img, {y: 50,}, {
       duration: 1,
-      y: 50,
+      y: 0,
       ease: "power4",
 		}, "<");
     
@@ -37,18 +37,17 @@ $(document).ready(function () {
 		var img = document.querySelector(hoverImg + imgId + "");
 		// GSAP timeline to animate the reveal box and the image
 	tl
-	.to(img, {
-		duration: 1,
-		y: 50,
-		ease: "power4",
-	})
+	.fromTo(img, {y: 0,}, {
+      		duration: 1,
+      		y: 50,
+	}
 	.to(img, {
 	      duration:0.3,
 	      opacity:0
 	}, "<")
-  	.to(img, {
-		duration: 0.01,
-		y: -50,
-	}, ">");
+//   	.to(img, {
+// 		duration: 0.01,
+// 		y: -50,
+// 	}, ">");
   });
 });
