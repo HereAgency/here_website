@@ -40,7 +40,7 @@ $(document).ready(function () {
 	.fromTo(img, {y: 0,}, {
       		duration: 1,
       		y: 50,
-	}
+	})
 	.to(img, {
 	      duration:0.3,
 	      opacity:0
