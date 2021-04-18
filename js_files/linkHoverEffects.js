@@ -3,7 +3,7 @@ $(document).ready(function () {
   const hoverImg = "#home-hero-image-";
   var imgId = 0;
 
-  linkTrigger.mouseover(function() {
+  linkTrigger.mouseenter(function() {
     imgId = this.id.slice(-1);
 
     // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
