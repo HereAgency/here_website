@@ -36,15 +36,20 @@ $(document).ready(function () {
     var tl = gsap.timeline();
 		var img = document.querySelector(hoverImg + imgId + "");
 		// GSAP timeline to animate the reveal box and the image
-		tl
-    .from(img, {
-      duration: 1,
-      y: -50,
-      ease: "power4",
-		})
-		.to(img, {
-      duration:0.3,
-      opacity:0
-		}, "<");
+	tl
+	.to(img, {
+		duration: 1,
+		y: -50,
+		ease: "power4",
+	})
+	.to(img, {
+	      duration:0.3,
+	      opacity:0
+	}, "<")
+  	.to(img, {
+		duration: 0.01,
+		y: 50,
+		ease: "power4",
+	}, ">");
   });
 });
