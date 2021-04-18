@@ -1,0 +1,50 @@
+$(document).ready(function () {
+  const linkTrigger = $(".text-wrapper-header a");
+  const hoverImg = "#home-hero-image-";
+  var imgId = 0;
+
+  linkTrigger.mouseover(function() {
+    imgId = this.id.slice(-1);
+
+    // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
+    var tl = gsap.timeline();
+		var img = document.querySelector(hoverImg + imgId + "");
+		// GSAP timeline to animate the reveal box and the image
+    // 		//First make the revealBox visible
+		tl
+		.to(img, {
+      duration:0.3,
+      opacity:1
+		})
+    .from(img, {
+      duration: 1,
+      y: 100,
+      ease: "power4",
+		}, "<");
+    
+    
+    // IMAGE MOVEMENT
+    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+      document.querySelector(hoverImg + imgId + "").style.left = -100 + n.offsetX/3 + "px"
+    });
+    
+  });
+  linkTrigger.mouseleave(function() {
+    imgId = this.id.slice(-1);
+    
+    // IMAGE TRANSLATE AND FADE OUT
+    var tl = gsap.timeline();
+		var img = document.querySelector(hoverImg + imgId + "");
+		// GSAP timeline to animate the reveal box and the image
+		tl
+    .from(img, {
+      duration: 1,
+      y: -100,
+      ease: "power4",
+		})
+		.to(img, {
+      duration:0.3,
+      opacity:0
+		}, "<");
+  });
+});
