@@ -73,7 +73,7 @@ body.arrow .cursor-dot.hover:after{
 /*   background-size:50%; */
 }
 
-a.hover-target{
+/* a.hover-target{
   position: relative;
   display: inline-block;
   text-decoration: underline;
@@ -101,4 +101,4 @@ a.hover-target:before{
 }
 a.hover-target:hover:before{
   height: 100%;
-}
+} */
