@@ -23,7 +23,7 @@ $('document').ready(function () {
   });
   //Images/sections fade in
   
-  inView('.ha-section .cs-split-section .fadein-wrapper').on('enter', function(elFadein) {
+  inView('.fadein-wrapper').on('enter', function(elFadein) {
 //   inView('.fadeIn-wrapper').on('enter', function(elFadein) {
     if (elFadein.classList.contains('hasClassTriggered')) {
       return;
