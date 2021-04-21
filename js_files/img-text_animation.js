@@ -3,6 +3,8 @@ $('document').ready(function () {
   //Triggers images and texts (only once) when in viewport:
   inView.threshold(0.2);//triggers when element is 20% in viewport
   inView('.text-wrapper').on('enter', function (elText) {
+    console.log("text-wrapper");
+    console.log(elText);
     if (elText.classList.contains('hasClassTriggered')) {
       return;
     } else {
@@ -23,7 +25,6 @@ $('document').ready(function () {
   
   inView('.ha-section .cs-split-section .fadein-wrapper').on('enter', function(elFadein) {
 //   inView('.fadeIn-wrapper').on('enter', function(elFadein) {
-    console.log("triggered fadein");
     if (elFadein.classList.contains('hasClassTriggered')) {
       return;
     } else {
