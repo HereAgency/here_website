@@ -20,7 +20,9 @@ $('document').ready(function () {
     }
   });
   //Images/sections fade in
-  inView('.fadeIn-wrapper').on('enter', function(elFadein) {
+  
+  inView('.ha-section .cs-split-section .fadein-wrapper').on('enter', function(elFadein) {
+//   inView('.fadeIn-wrapper').on('enter', function(elFadein) {
     console.log("triggered fadein");
     if (elFadein.classList.contains('hasClassTriggered')) {
       return;
