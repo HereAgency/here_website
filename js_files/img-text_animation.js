@@ -115,7 +115,7 @@ $('document').ready(function () {
     );
   }
   function fadeInElement(element) {
-    var elFadeIn = element.querySelector('.fadeIn-wrapper');
+    var elFadeIn = element.querySelector('.fadeIn-animation');
 
     //local timeline
     var tl = gsap.timeline();
