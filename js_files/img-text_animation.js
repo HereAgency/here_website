@@ -21,6 +21,7 @@ $('document').ready(function () {
   });
   //Images/sections fade in
   inView('.fadeIn-wrapper').on('enter', function(elFadein) {
+    console.log("triggered fadein");
     if (elFadein.classList.contains('hasClassTriggered')) {
       return;
     } else {
@@ -115,6 +116,7 @@ $('document').ready(function () {
     );
   }
   function fadeInElement(element) {
+    console.log("fadeInElement()");
     var elFadeIn = element.querySelector('.fadeIn-animation');
 
     //local timeline
