@@ -81,7 +81,7 @@ $('document').ready(function () {
     },'<');
     
     var tlSlideUp = gsap.timeline();
-    var slideUpItems = element.querySelector('.sildeup-animation');
+    var slideUpItems = element.querySelectorAll('.slideup-animation');
 
     console.log(slideUpItems);
     tlSlideUp
