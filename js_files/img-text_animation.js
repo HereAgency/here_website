@@ -33,6 +33,14 @@ $('document').ready(function () {
     }
   });
   
+  inView('.slideUp-wrapper').on('enter', function (el) {
+    if (el.classList.contains('hasClassTriggered')) {
+      return;
+    } else {
+      ListSlideUp(el);
+      el.classList.add('hasClassTriggered');
+    }
+  });
 
   function textTrigger(element) {
   //local timeline
@@ -131,5 +139,22 @@ $('document').ready(function () {
         duration: 1,
         opacity: 1,
       });
+  }
+  function ListSlideUp(element) {
+  //local timeline
+  var tlSlideUp = gsap.timeline();
+  var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
+
+  tlSlideUp
+    .to(slideUpItems, {
+      duration: 0.2,
+      opacity: 1,
+    })
+    .from(slideUpItems, {
+      duration: 0.6,
+      yPercent: 100,
+      ease: 'power4',
+      stagger: 0.15,
+    },'<');
   }
 });
