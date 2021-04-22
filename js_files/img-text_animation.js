@@ -79,6 +79,22 @@ $('document').ready(function () {
       ease: 'power4',
       stagger: 0.15,
     },'<');
+    
+    var tlSlideUp = gsap.timeline();
+    var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
+
+    console.log(slideUpItems);
+    tlSlideUp
+      .to(slideUpItems, {
+        duration: 0.2,
+        opacity: 1,
+      })
+      .from(slideUpItems, {
+        duration: 0.6,
+        yPercent: 100,
+        ease: 'power4',
+        stagger: 0.15,
+      },'<');
   }
 
   function revealImage(element) {
@@ -126,24 +142,8 @@ $('document').ready(function () {
       },
       '>'
     );
-  }
-  function fadeInElement(element) {
-    console.log("fadeInElement()");
-    var elFadeIn = element.querySelector('.fadeIn-animation');
-
-    //local timeline
-    var tl = gsap.timeline();
     
-    tl.to(
-      elFadeIn, 
-      {
-        duration: 1,
-        opacity: 1,
-      });
-  }
-  function ListSlideUp(element) {
-    console.log("ListSlideUp()");
-  //local timeline
+    
   var tlSlideUp = gsap.timeline();
   var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
 
@@ -160,4 +160,39 @@ $('document').ready(function () {
       stagger: 0.15,
     },'<');
   }
+  
+  }
+  function fadeInElement(element) {
+    console.log("fadeInElement()");
+    var elFadeIn = element.querySelector('.fadeIn-animation');
+
+    //local timeline
+    var tl = gsap.timeline();
+    
+    tl.to(
+      elFadeIn, 
+      {
+        duration: 1,
+        opacity: 1,
+      });
+  }
+  function ListSlideUp(element) {
+//     console.log("ListSlideUp()");
+//   //local timeline
+//   var tlSlideUp = gsap.timeline();
+//   var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
+
+//   console.log(slideUpItems);
+//   tlSlideUp
+//     .to(slideUpItems, {
+//       duration: 0.2,
+//       opacity: 1,
+//     })
+//     .from(slideUpItems, {
+//       duration: 0.6,
+//       yPercent: 100,
+//       ease: 'power4',
+//       stagger: 0.15,
+//     },'<');
+//   }
 });
