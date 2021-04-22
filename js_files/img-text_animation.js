@@ -37,6 +37,7 @@ $('document').ready(function () {
     if (el.classList.contains('hasClassTriggered')) {
       return;
     } else {
+      console.log("trigger");
       ListSlideUp(el);
       el.classList.add('hasClassTriggered');
     }
@@ -141,10 +142,12 @@ $('document').ready(function () {
       });
   }
   function ListSlideUp(element) {
+    console.log("ListSlideUp()");
   //local timeline
   var tlSlideUp = gsap.timeline();
   var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
 
+  console.log(slideUpItems);
   tlSlideUp
     .to(slideUpItems, {
       duration: 0.2,
