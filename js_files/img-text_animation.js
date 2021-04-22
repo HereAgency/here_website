@@ -100,10 +100,7 @@ $('document').ready(function () {
   function revealImage(element) {
   var reveal = element.querySelector('.revealer');
   var img = element.querySelector('.img-animation');
-  // GSAP timeline to animate the reveal box and the image
-  // 		//First make the revealBox visible
-
-  //local timeline
+		
   var tl = gsap.timeline();
   tl.to(
     reveal, 
@@ -159,7 +156,6 @@ $('document').ready(function () {
       ease: 'power4',
       stagger: 0.15,
     },'<');
-  }
   
   }
   function fadeInElement(element) {
@@ -176,7 +172,7 @@ $('document').ready(function () {
         opacity: 1,
       });
   }
-  function ListSlideUp(element) {
+  // function ListSlideUp(element) {
 //     console.log("ListSlideUp()");
 //   //local timeline
 //   var tlSlideUp = gsap.timeline();
@@ -194,5 +190,5 @@ $('document').ready(function () {
 //       ease: 'power4',
 //       stagger: 0.15,
 //     },'<');
-//   }
+  // }
 });
