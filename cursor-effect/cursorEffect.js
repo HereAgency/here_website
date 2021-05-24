@@ -1,6 +1,6 @@
 
 document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-	if(document.body.classList.contains('layout-switch')){
+	if( (document.body.classList.contains('layout-switch')) && (!document.body.classList.contains('hover-section'))){
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
 	}
