@@ -2,11 +2,14 @@
 document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
 	if( (document.body.classList.contains('layout-switch')) && (!document.body.classList.contains('hover-section'))){
 		t.style.left = n.clientX + "px",
-		t.style.top = n.clientY + "px"
+		t.style.top = n.clientY + "px",
+		e.style.left = n.clientX + "px",
+		e.style.top = n.clientY + "px"
 	}
 });
 
 var t = document.getElementById("cursor-dot");
+var e = document.getElementById("cursor-img");
 
 const cursorModifiers = document.querySelectorAll('.hover-target');
 const bodychange = document.body;
