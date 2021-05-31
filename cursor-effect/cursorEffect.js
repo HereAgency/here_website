@@ -17,13 +17,14 @@ const bodychange = document.body;
 cursorModifiers.forEach(cursorModifier => {
   $(cursorModifier).mouseenter( function() {
     const className = this.getAttribute('cursor-class');
-    bodychange.classList.add(className);
     t.classList.add("hover"); 
+    e.classList.add("hover"); 
   });
   
   $(cursorModifier).mouseleave(function() {
     const className = this.getAttribute('cursor-class');
     bodychange.classList.remove(className);
     t.classList.remove("hover");
+    e.classList.remove("hover");
   });
 });
