@@ -6,6 +6,9 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		    left: n.clientX + "px",
 		    top: n.clientY + "px",
 		});
+		gsap.to(t, {
+			display:block
+		});
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
 		//	e.style.left = n.clientX + "px",
@@ -14,14 +17,14 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 	}
 });
 
-// $('.hover-section').mouseenter(function() {
+$('.hover-section').mouseenter(function() {
 // 		gsap.to('.hover-section', {
 // 			cursor:default
 // 		});
-// 		gsap.to(t, {
-// 			display:none
-// 		});
-// });
+	gsap.to(t, {
+		display:none
+	});
+});
 
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
