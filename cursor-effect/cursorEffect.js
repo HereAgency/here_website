@@ -1,7 +1,8 @@
-document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-	if( (document.body.classList.contains('layout-switch')) 
+if( (document.body.classList.contains('layout-switch')) 
 	   && (!document.body.classList.contains('hover-section'))
 	  ){
+document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+	
 		gsap.to(e, 0.3, {
 		    left: n.clientX + "px",
 		    top: n.clientY + "px",
@@ -10,8 +11,9 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		t.style.top = n.clientY + "px"
 		//	e.style.left = n.clientX + "px",
 		// 	e.style.top = n.clientY + "px"
-	}
+	
 });
+	}
 
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
