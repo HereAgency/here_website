@@ -7,7 +7,7 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		    top: n.clientY + "px",
 		});
 		gsap.to(t, {
-			display:block
+			opacity:1
 		});
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
@@ -22,7 +22,7 @@ $('.hover-section').mouseenter(function() {
 // 			cursor:default
 // 		});
 	gsap.to(t, {
-		display:initial
+		opacity:0
 	});
 });
 
