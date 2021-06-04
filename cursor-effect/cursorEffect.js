@@ -18,7 +18,7 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 	
 	}
 	//desable cursor on hover-section
-	if (document.body.classList.contains('hover-section'))){
+	if (document.body.classList.contains('hover-section')){
 		gsap.to(t, {
 			opacity:0,
 			duration:0.1
