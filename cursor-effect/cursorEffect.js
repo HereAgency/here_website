@@ -15,12 +15,12 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
 
-$('.ha-section.hover-section').mouseenter(function() {
-	t.style.opacity = 0
-});
-$('.ha-section.hover-section').mouseleave(function() {
-	t.style.opacity = 1
-});
+// $('.ha-section.hover-section').mouseenter(function() {
+// 	t.style.opacity = 0
+// });
+// $('.ha-section.hover-section').mouseleave(function() {
+// 	t.style.opacity = 1
+// });
 
 const cursorModifiers = document.querySelectorAll('.hover-target');
 const bodychange = document.body;
@@ -29,14 +29,26 @@ cursorModifiers.forEach(cursorModifier => {
   $(cursorModifier).mouseenter( function() {
     const className = this.getAttribute('cursor-class');
     bodychange.classList.add(className);
-    t.classList.add("hover"); 
-    e.classList.add("hover"); 
-  });
+		
+		if(className == 'hover-section'){
+			t.style.opacity = 0
+		} else if (className == 'arrow'){
+			t.classList.add("hover"); 
+		} else{
+			e.classList.add("hover"); 
+		}
+	});
   
   $(cursorModifier).mouseleave(function() {
     const className = this.getAttribute('cursor-class');
     bodychange.classList.remove(className);
-    t.classList.remove("hover");
-    e.classList.remove("hover");
+		
+		if(className == 'hover-section'){
+			t.style.opacity = 0
+		} else if (className == 'arrow'){
+			t.classList.remove("hover"); 
+		} else{
+			e.classList.remove("hover"); 
+		}
   });
 });
