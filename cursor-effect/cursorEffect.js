@@ -12,9 +12,13 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		// 	e.style.top = n.clientY + "px"
 	
 	}
-	if (document.body.classList.contains('hover-section')){
-		$(t).css({display:none});
-	}
+});
+
+$('.hover-section').mouseenter(function() {
+		gsap.to(t, {
+			display:none,
+			cursor:default
+		});
 });
 
 var t = document.getElementById("cursor-dot");
