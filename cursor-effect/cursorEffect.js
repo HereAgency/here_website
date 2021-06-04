@@ -1,10 +1,9 @@
-
 document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
 	if( (document.body.classList.contains('layout-switch')) && (!document.body.classList.contains('hover-section'))){
 		//image moving on hover:
 		gsap.to(e, 0.3, {
 		    left: n.clientX + "px",
-		    top: n.clientY + "px",
+		    top: n.clientY + "px"
 		});
 		//red dot on cursor:
 		gsap.to(t, {
@@ -21,7 +20,8 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 	//desable cursor on hover-section
 	if (document.body.classList.contains('hover-section'))){
 		gsap.to(t, {
-			opacity:0
+			opacity:0,
+			duration:0.1
 		});
 	}
 });
