@@ -14,29 +14,27 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		// 	left: n.clientX + "px",
 		// 	top: n.clientY + "px"
 		// });
-		t.style.opacity = 1,
+// 		t.style.opacity = 1,
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
 	
-	}
-	//desable cursor on hover-section
-	if (document.body.classList.contains('hover-section')){
-		// gsap.to(t, {
-		// 	opacity:0,
-		// 	duration:0.1
-		// });
-		t.style.opacity = 0
-	}
+// 	}
+// 	//desable cursor on hover-section
+// 	if (document.body.classList.contains('hover-section')){
+// 		// gsap.to(t, {
+// 		// 	opacity:0,
+// 		// 	duration:0.1
+// 		// });
+// 		t.style.opacity = 0
+// 	}
 });
 
-// $('.hover-section').mouseenter(function() {
-// // 		gsap.to('.hover-section', {
-// // 			cursor:default
-// // 		});
-// 	gsap.to(t, {
-// 		opacity:0
-// 	});
-// });
+$('.hover-section').mouseenter(function() {
+	t.style.opacity = 0
+});
+$('.hover-section').mouseleave(function() {
+	t.style.opacity = 1
+});
 
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
