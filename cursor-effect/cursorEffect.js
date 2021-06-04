@@ -22,7 +22,7 @@ $('.hover-section').mouseenter(function() {
 // 			cursor:default
 // 		});
 	gsap.to(t, {
-		display:none
+		display:initial
 	});
 });
 
