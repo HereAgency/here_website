@@ -14,14 +14,14 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 	}
 });
 
-$('.hover-section').mouseenter(function() {
-		gsap.to('.hover-section', {
-			cursor:default
-		});
-		gsap.to(t, {
-			display:none
-		});
-});
+// $('.hover-section').mouseenter(function() {
+// 		gsap.to('.hover-section', {
+// 			cursor:default
+// 		});
+// 		gsap.to(t, {
+// 			display:none
+// 		});
+// });
 
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
