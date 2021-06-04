@@ -18,7 +18,7 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
 	
-// 	}
+	}
 // 	//desable cursor on hover-section
 // 	if (document.body.classList.contains('hover-section')){
 // 		// gsap.to(t, {
