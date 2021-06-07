@@ -56,13 +56,15 @@ class MagneticCursor {
     document.addEventListener("mousemove", this.move.bind(this), false);
   }
 
-  move(e) {
+  move(el) {
     const cursorPosition = {
-      left: e.clientX,
-      top: e.clientY
+      left: el.clientX,
+      top: el.clientY
     };
     document.querySelectorAll(".ig-target").forEach((single) => {
+
       const triggerDistance = single.getBoundingClientRect().width;
+	    console.log(triggerDistance);
 
       const targetPosition = {
         left:
@@ -81,9 +83,9 @@ class MagneticCursor {
       const hypotenuse = Math.sqrt(
         distance.x * distance.x + distance.y * distance.y
       );
-      if (hypotenuse < triggerDistance) {
         console.log(hypotenuse);
         console.log(triggerDistance);
+      if (hypotenuse < triggerDistance) {
         gsap.to(this.el, {
           left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
           top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
