@@ -31,7 +31,7 @@ cursorModifiers.forEach(cursorModifier => {
     bodychange.classList.add(className);
 		
 		if(className == 'hover-section'){
-			t.style.opacity = 0
+// 			t.style.opacity = 0
 		} else if (className == 'arrow'){
 			t.classList.add("hover"); 
 		} else{
@@ -44,7 +44,7 @@ cursorModifiers.forEach(cursorModifier => {
     bodychange.classList.remove(className);
 		
 		if(className == 'hover-section'){
-			t.style.opacity = 1
+// 			t.style.opacity = 1
 		} else if (className == 'arrow'){
 			t.classList.remove("hover"); 
 		} else{
