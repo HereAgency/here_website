@@ -11,7 +11,6 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 		t.style.left = n.clientX + "px",
 		t.style.top = n.clientY + "px"
 		
-		const magneticCursor = new MagneticCursor(t);
 	}
 });
 
@@ -103,7 +102,7 @@ class MagneticCursor {
           duration: 0.2
         });
       } 
-      else {
+      else if (document.body.classList.contains('layout-switch'))  {
         gsap.to(this.el, {
           left: cursorPosition.left,
           top: cursorPosition.top,
@@ -123,3 +122,5 @@ class MagneticCursor {
   }
 }
 
+
+const magneticCursor = new MagneticCursor(t);
