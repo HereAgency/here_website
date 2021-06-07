@@ -83,19 +83,30 @@ class MagneticCursor {
         distance.x * distance.x + distance.y * distance.y
       );
       if (hypotenuse < triggerDistance) {
-//         console.log(hypotenuse);
-//         console.log(triggerDistance);
-        gsap.to(this.el, {
-          left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
-          top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
-          height: "80px",
-          width: "80px",
-          // height: single.clientHeight,
-          // width: single.clientWidth,
-          backgroundColor: "transparent",
-          border: "solid 1px white",
-          duration: 0.2
-        });
+        if(single.classList.contains("black-link")){
+          console.log('contains black');
+          gsap.to(this.el, {
+            left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
+            top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
+            height: "80px",
+            width: "80px",
+            backgroundColor: "transparent",
+            border: "solid 1px #131415",
+            duration: 0.2
+          });
+        } else {
+          
+          gsap.to(this.el, {
+            left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
+            top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
+            height: "80px",
+            width: "80px",
+            backgroundColor: "transparent",
+            border: "solid 1px white",
+            duration: 0.2
+          });
+        }
+        
         gsap.to(single.querySelector(".instagram-icon"), {
           x: -((Math.sin(angle) * hypotenuse) / 2),
           y: -((Math.cos(angle) * hypotenuse) / 2),
