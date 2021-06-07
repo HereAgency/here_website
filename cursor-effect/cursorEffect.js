@@ -29,8 +29,11 @@ const bodychange = document.body;
 
 cursorModifiers.forEach(cursorModifier => {
   $(cursorModifier).mouseenter( function() {
+  	console.log("mouseenter hover-target");
     const className = this.getAttribute('cursor-class');
     bodychange.classList.add(className);
+	  
+  	console.log(className);
 		
 		if(className == 'hover-section'){
 // 			t.style.opacity = 0
