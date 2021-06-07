@@ -82,8 +82,8 @@ class MagneticCursor {
         distance.x * distance.x + distance.y * distance.y
       );
       if (hypotenuse < triggerDistance) {
-        console.log(hypotenuse);
-        console.log(triggerDistance);
+//         console.log(hypotenuse);
+//         console.log(triggerDistance);
         gsap.to(this.el, {
           left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
           top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
