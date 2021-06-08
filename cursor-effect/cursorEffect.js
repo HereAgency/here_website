@@ -27,20 +27,16 @@ cursorModifiers.forEach(cursorModifier => {
     bodychange.classList.add(className);
 	if(className == 'desable'){
 		t.style.opacity = 0
-	} else if (className == 'arrow'){
+	} else {
 		t.classList.add("hover");
 		gsap.set(a,  {
 		    opacity: 1,
 		    delay: 0.2,
 		    duration: 0.8
 		}); 
-	} else{
+	}
+	if((!className == 'desable') && (!className == 'arrow')){
 		e.classList.add("hover"); 
-		gsap.set(a,  {
-		    opacity: 1,
-		    delay: 0.2,
-		    duration: 0.8
-		}); 
 	}
   });
   
@@ -49,18 +45,15 @@ cursorModifiers.forEach(cursorModifier => {
     bodychange.classList.remove(className);
 	if(className == 'desable'){
 		t.style.opacity = 1
-	} else if (className == 'arrow'){
+	} else {
 		t.classList.remove("hover"); 
-		    gsap.set(a, {
-		      opacity: 0,
-		      duration:0.1
-		    });
-	} else{
+		gsap.set(a, {
+			opacity: 0,
+			duration:0.1
+		});
+	}
+	if((!className == 'desable') && (!className == 'arrow')){
 		e.classList.remove("hover"); 
-		    gsap.set(a, {
-		      opacity: 0,
-		      duration:0.1
-		    });
 	}
   });
 });
