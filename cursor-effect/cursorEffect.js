@@ -22,10 +22,10 @@ const cursorModifiers = document.querySelectorAll('.hover-target');
 const bodychange = document.body;
 
 cursorModifiers.forEach(cursorModifier => {
+  $(cursorModifier).mouseenter( function() {
 	const className = this.getAttribute('cursor-class');
 	bodychange.classList.add(className);
 	const imgName = this.getAttribute('img-name');
-  $(cursorModifier).mouseenter( function() {
 	if(className == 'desable'){
 		t.style.opacity = 0
 	} else if (className == 'arrow'){
@@ -48,6 +48,9 @@ cursorModifiers.forEach(cursorModifier => {
   });
   
   $(cursorModifier).mouseleave(function() {
+	const className = this.getAttribute('cursor-class');
+	bodychange.classList.add(className);
+	const imgName = this.getAttribute('img-name');
 	if(className == 'desable'){
 		t.style.opacity = 1
 	} else if (className == 'arrow'){
