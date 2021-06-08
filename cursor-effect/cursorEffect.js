@@ -35,7 +35,7 @@ cursorModifiers.forEach(cursorModifier => {
 		    duration: 0.8
 		}); 
 	}
-	if((!className == 'desable') && (!className == 'arrow')){
+	if((className != 'desable') && (className != 'arrow')){
 		e.classList.add("hover"); 
 	}
   });
@@ -52,7 +52,7 @@ cursorModifiers.forEach(cursorModifier => {
 			duration:0.1
 		});
 	}
-	if((!className == 'desable') && (!className == 'arrow')){
+	if((className != 'desable') && (className != 'arrow')){
 		e.classList.remove("hover"); 
 	}
   });
