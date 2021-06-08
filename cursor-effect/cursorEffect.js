@@ -16,6 +16,7 @@ document.getElementsByTagName("body")[0].addEventListener("mousemove", function(
 
 var t = document.getElementById("cursor-dot");
 var e = document.getElementById("cursor-img");
+var a = document.getElementById("cursor-arrow-content");
 
 const cursorModifiers = document.querySelectorAll('.hover-target');
 const bodychange = document.body;
@@ -27,7 +28,12 @@ cursorModifiers.forEach(cursorModifier => {
 	if(className == 'desable'){
 		t.style.opacity = 0
 	} else if (className == 'arrow'){
-		t.classList.add("hover"); 
+		t.classList.add("hover");
+		gsap.set(a,  {
+		    opacity: 1,
+		    delay: 0.2,
+		    duration: 0.8
+		}); 
 	} else{
 		e.classList.add("hover"); 
 	}
@@ -40,6 +46,10 @@ cursorModifiers.forEach(cursorModifier => {
 		t.style.opacity = 1
 	} else if (className == 'arrow'){
 		t.classList.remove("hover"); 
+		    gsap.set(a, {
+		      opacity: 0,
+		      duration:0.1
+		    });
 	} else{
 		e.classList.remove("hover"); 
 	}
