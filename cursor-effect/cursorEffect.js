@@ -36,6 +36,11 @@ cursorModifiers.forEach(cursorModifier => {
 		}); 
 	} else{
 		e.classList.add("hover"); 
+		gsap.set(a,  {
+		    opacity: 1,
+		    delay: 0.2,
+		    duration: 0.8
+		}); 
 	}
   });
   
@@ -52,6 +57,10 @@ cursorModifiers.forEach(cursorModifier => {
 		    });
 	} else{
 		e.classList.remove("hover"); 
+		    gsap.set(a, {
+		      opacity: 0,
+		      duration:0.1
+		    });
 	}
   });
 });
