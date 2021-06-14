@@ -175,4 +175,4 @@ class MagneticCursor {
 }
 
 
-const magneticCursor = new MagneticCursor(t);
+const magneticCursor = new MagneticCursor(dot);
