@@ -11,7 +11,6 @@
 (function() {
 	var support = 
 		{ animations : Modernizr.cssanimations },
-	    	// pageName = document.querySelector('[page-name]').getAttribute('page-name'),
 		container = document.querySelector( '.ip-container' ),
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
@@ -37,17 +36,11 @@
 		}
 	}
 	function startLoading() {
-		// simulate loading something.. (logo for 2s)
+		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
-		// if(pageName === 'home'){
-		// 	time=2600;
-		// } else {
-		// 	time=400;
-		// }
 		setTimeout(function (time) {
 			container.classList.remove('loading');
 			container.classList.add('loaded');
-// 			clearInterval(interval);
 
 			var onEndHeaderAnimation = function (ev) {
 				if (support.animations) {
@@ -56,7 +49,6 @@
 				}
 				document.body.classList.add('layout-switch');
 				window.removeEventListener('scroll', noscroll);
-				textHeader();
 			};
 			if (support.animations) {
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
@@ -65,54 +57,7 @@
 			}
 		}, time);
 	}
-  	function textHeader() {
-		//Hide preloader div:
-		const preLoaderDiv = document.querySelector('.ip-container');
-		preLoaderDiv.style.display = "none";
-		
-		//local timeline
-		var tlTextHeader = gsap.timeline();
-		//Selectors
-		
-		//Fade in header image -CS page:
-		// let imgHeader = document.querySelector('.cs-fayt-header-img');
-		// var navbarItems = document.querySelectorAll('.navbar .nav-item-fadein');
-		var text = document.querySelectorAll('.text-animation-header');
-		var splitLine = document.querySelector('.text-animation-header .split-child');
-		
-		const childSplit = new SplitText(text, {
-			type: 'lines',
-			linesClass: 'split-child',
-		});
-		const parentSplit = new SplitText(text, {
-			linesClass: 'split-parent',
-		});
-		// GSAP timeline to animate navbar items and text
-		tlTextHeader
-			// .to(navbarItems, {
-			// 	duration: 1, 
-			// 	opacity:1,
-			// })
-			// .from(navbarItems, {
-			// 	y: -50, 
-			// 	duration: 1,
-			// }, '<')
-			.to(text, {
-				duration:1,
-				opacity: 1,
-			},'<')
-			.from(childSplit.lines, {
-				duration: 1,
-				yPercent: 100,
-				ease: 'power4',
-				stagger: 0.15,
-			}, '<' )
-			// .to(imgHeader, {
-			// 	duration:1,
-			// 	opacity: 1,
-			// }, '<' )
-			;
-  	}
+	//Enable the scroll after loader finishes
 	function noscroll() {
 		window.scrollTo( 0, 0 );
 	}
