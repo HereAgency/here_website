@@ -175,7 +175,7 @@ $('document').ready(function () {
 
     function revealCsImage(element) {
         var reveal = element.querySelector('.revealer');
-        var csImg = element.querySelector('.cs-img-animation');
+        var csImg = element.querySelector('.cs-image-animation');
               var tl = gsap.timeline();
     
         tl.to(
