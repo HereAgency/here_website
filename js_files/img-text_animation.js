@@ -23,7 +23,7 @@ $('document').ready(function () {
     });
 
     //CS Blocks with revealer:
-    inView('.img-animation').on('enter', function (elLink) {
+    inView('.cs-img-animation').on('enter', function (elLink) {
         if (elLink.classList.contains('hasClassTriggered')) {
           return;
         } else {
