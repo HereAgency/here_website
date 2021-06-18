@@ -229,14 +229,14 @@ $('document').ready(function () {
         },
         '>'
       )
-      //Make the cs block invisble by default via scriot
-      .from(
-          img,
-          {
-            duration:0,
-            opacity:0,
-          }
-      )
+      //Make the cs block invisble by default via script
+    //   .from(
+    //       img,
+    //       {
+    //         duration:0.01,
+    //         opacity:0,
+    //       }
+    //   )
       // Make the cs block visibile
       .to(
         img,
