@@ -27,7 +27,7 @@ $('document').ready(function () {
         if (elLink.classList.contains('hasClassTriggered')) {
           return;
         } else {
-          revealImage(elImg);
+          revealImage(elLink);
           elLink.classList.add('hasClassTriggered');
         }
       });
