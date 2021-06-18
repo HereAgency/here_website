@@ -204,8 +204,6 @@ $('document').ready(function () {
   //       stagger: 0.15,
   //     },'<');
     // }
-  });
-
 
   function revealCsImage(element) {
     var reveal = element.querySelector('.revealer');
@@ -260,4 +258,5 @@ $('document').ready(function () {
         '>'
       );
     }
-  
+
+}); 
