@@ -13,14 +13,14 @@ $('document').ready(function () {
       }
     });
     //images with revealer:
-    inView('.image-wrapper').on('enter', function (elImg) {
-      if (elImg.classList.contains('hasClassTriggered')) {
-        return;
-      } else {
-        revealImage(elImg);
-        elImg.classList.add('hasClassTriggered');
-      }
-    });
+    // inView('.image-wrapper').on('enter', function (elImg) {
+    //   if (elImg.classList.contains('hasClassTriggered')) {
+    //     return;
+    //   } else {
+    //     revealImage(elImg);
+    //     elImg.classList.add('hasClassTriggered');
+    //   }
+    // });
 
     //CS Blocks with revealer:
     inView('.cs-img-animation').on('enter', function (elLink) {
