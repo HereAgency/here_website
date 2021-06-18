@@ -27,8 +27,8 @@ $('document').ready(function () {
         if (elLink.classList.contains('hasClassTriggered')) {
           return;
         } else {
-          revealImage(elLink);
-          elLink.classList.add('hasClassTriggered');
+            revealCsImage(elLink);
+            elLink.classList.add('hasClassTriggered');
         }
       });
 
@@ -231,9 +231,10 @@ $('document').ready(function () {
       )
       //Make the cs block invisble by default via scriot
       .from(
-          img,{
-              duration:0,
-              opacity:0,
+          img,
+          {
+            duration:0,
+            opacity:0,
           }
       )
       // Make the cs block visibile
