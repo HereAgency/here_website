@@ -22,15 +22,15 @@ $('document').ready(function () {
       }
     });
 
-    //CS Blocks with revealer:
-    // inView('.image-wrapper').on('enter', function (elLink) {
-    //     if (elLink.classList.contains('hasClassTriggered')) {
-    //       return;
-    //     } else {
-    //         revealCsImage(elLink);
-    //         elLink.classList.add('hasClassTriggered');
-    //     }
-    //   });
+    // CS Blocks with revealer:
+    inView('.cs-image-wrapper').on('enter', function (elLink) {
+        if (elLink.classList.contains('hasClassTriggered')) {
+          return;
+        } else {
+            revealCsImage(elLink);
+            elLink.classList.add('hasClassTriggered');
+        }
+      });
 
 
     //Images/sections fade in
@@ -114,6 +114,7 @@ $('document').ready(function () {
     var img = element.querySelector('.img-animation');
           
     var tl = gsap.timeline();
+
     tl.to(
       reveal, 
       {
@@ -157,6 +158,7 @@ $('document').ready(function () {
     var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
   
     console.log(slideUpItems);
+    
     tlSlideUp
       .to(slideUpItems, {
         duration: 0.2,
@@ -170,6 +172,50 @@ $('document').ready(function () {
       },'<');
     
     }
+
+    function revealCsImage(element) {
+        var reveal = element.querySelector('.revealer');
+        var csImg = element.querySelector('.cs-img-animation');
+              var tl = gsap.timeline();
+    
+        tl.to(
+          reveal, 
+          {
+            duration: 0.01,
+            opacity: 1,
+        })
+          //Animate the reveal box from the bottom to the full height
+          .from(
+            reveal,
+            {
+              duration: 0.5,
+              transform: 'scale3d(1,0,1)',
+              transformOrigin: '50% 100%',
+              ease: Power4.easeOut,
+            },
+            '>'
+          )
+          // Make the cs block visibile
+          .to(
+            csImg,
+            {
+                duration: 0.01,
+                opacity: 1,
+            },
+            '>'
+          )
+          //Animate the reveal box from full height to the top with no height
+          .to(
+            reveal,
+            {
+              duration: 0.5,
+              transform: 'scale3d(1,0,1)',
+              transformOrigin: '50% 0%',
+              ease: Power4.easeOut,
+            },
+            '>'
+          );
+        }
 
     function fadeInElement(element) {
       console.log("fadeInElement()");
@@ -205,49 +251,4 @@ $('document').ready(function () {
   //       stagger: 0.15,
   //     },'<');
     // }
-
-//   function revealCsImage(element) {
-//     var reveal = element.querySelector('.revealer');
-//     var img = element.querySelector('.cs-img-animation');
-//     console.log(img);      
-//     var tl = gsap.timeline();
-
-//     tl.to(
-//       reveal, 
-//       {
-//         duration: 0.01,
-//         opacity: 1,
-//     })
-//       //Animate the reveal box from the bottom to the full height
-//       .from(
-//         reveal,
-//         {
-//           duration: 0.5,
-//           transform: 'scale3d(1,0,1)',
-//           transformOrigin: '50% 100%',
-//           ease: Power4.easeOut,
-//         },
-//         '>'
-//       )
-//       // Make the cs block visibile
-//       .to(
-//         img,
-//         {
-//             duration: 0.01,
-//             opacity: 1,
-//         },
-//         '>'
-//       )
-//       //Animate the reveal box from full height to the top with no height
-//       .to(
-//         reveal,
-//         {
-//           duration: 0.5,
-//           transform: 'scale3d(1,0,1)',
-//           transformOrigin: '50% 0%',
-//           ease: Power4.easeOut,
-//         },
-//         '>'
-//       );
-//     }
 }); 
