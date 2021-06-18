@@ -209,14 +209,15 @@ $('document').ready(function () {
 
   function revealCsImage(element) {
     var reveal = element.querySelector('.revealer');
-    var img = element.querySelector('.cs-img-animation');      
+    var img = element.querySelector('.cs-img-animation');
+    console.log(img);      
     var tl = gsap.timeline();
 
     tl.to(
       reveal, 
       {
-      duration: 0.01,
-      opacity: 1,
+        duration: 0.01,
+        opacity: 1,
     })
       //Animate the reveal box from the bottom to the full height
       .from(
@@ -237,6 +238,7 @@ $('document').ready(function () {
     //         opacity:0,
     //       }
     //   )
+
       // Make the cs block visibile
       .to(
         img,
