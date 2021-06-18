@@ -209,9 +209,9 @@ $('document').ready(function () {
 
   function revealCsImage(element) {
     var reveal = element.querySelector('.revealer');
-    var img = element.querySelector('.cs-img-animation');
-          
+    var img = element.querySelector('.cs-img-animation');      
     var tl = gsap.timeline();
+
     tl.to(
       reveal, 
       {
@@ -229,12 +229,19 @@ $('document').ready(function () {
         },
         '>'
       )
-      // Make the image visibile
+      //Make the cs block invisble by default via scriot
+      .from(
+          img,{
+              duration:0,
+              opacity:0,
+          }
+      )
+      // Make the cs block visibile
       .to(
         img,
         {
-          duration: 0.01,
-          opacity: 1,
+            duration: 0.01,
+            opacity: 1,
         },
         '>'
       )
