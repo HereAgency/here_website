@@ -111,7 +111,7 @@ $('document').ready(function () {
   
     function revealImage(element) {
     var reveal = element.querySelector('.revealer');
-    var img = element.querySelector('.cs-img-animation');
+    var img = element.querySelector('.img-animation');
           
     var tl = gsap.timeline();
     tl.to(
@@ -209,7 +209,7 @@ $('document').ready(function () {
 
   function revealCsImage(element) {
     var reveal = element.querySelector('.revealer');
-    var img = element.querySelector('.img-animation');
+    var img = element.querySelector('.cs-img-animation');
           
     var tl = gsap.timeline();
     tl.to(
