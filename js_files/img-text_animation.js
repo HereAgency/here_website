@@ -3,8 +3,6 @@ $('document').ready(function () {
     //Triggers images and texts (only once) when in viewport:
     inView.threshold(0.2);//triggers when element is 20% in viewport
     inView('.text-wrapper').on('enter', function (elText) {
-      console.log("text-wrapper");
-      console.log(elText);
       if (elText.classList.contains('hasClassTriggered')) {
         return;
       } else {
@@ -49,7 +47,6 @@ $('document').ready(function () {
   //     if (el.classList.contains('hasClassTriggered')) {
   //       return;
   //     } else {
-  //       console.log("trigger");
   //       ListSlideUp(el);
   //       el.classList.add('hasClassTriggered');
   //     }
@@ -95,7 +92,6 @@ $('document').ready(function () {
   //     var tlSlideUp = gsap.timeline();
   //     var slideUpItems = element.querySelectorAll('.slideup-animation');
   
-  //     console.log(slideUpItems);
   //     tlSlideUp
   //       .to(slideUpItems, {
   //         duration: 0.2,
@@ -156,8 +152,6 @@ $('document').ready(function () {
       
     var tlSlideUp = gsap.timeline();
     var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
-  
-    console.log(slideUpItems);
     
     tlSlideUp
       .to(slideUpItems, {
@@ -218,7 +212,6 @@ $('document').ready(function () {
         }
 
     function fadeInElement(element) {
-      console.log("fadeInElement()");
       var elFadeIn = element.querySelector('.fadeIn-animation');
   
       //local timeline
@@ -233,12 +226,10 @@ $('document').ready(function () {
     }
 
     // function ListSlideUp(element) {
-  //     console.log("ListSlideUp()");
   //   //local timeline
   //   var tlSlideUp = gsap.timeline();
   //   var slideUpItems = element.querySelector('.cs-list-item-text.sildeup-animation');
   
-  //   console.log(slideUpItems);
   //   tlSlideUp
   //     .to(slideUpItems, {
   //       duration: 0.2,
