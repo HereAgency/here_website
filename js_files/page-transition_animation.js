@@ -3,13 +3,13 @@
   if (links){
     links.forEach ((link) => {
       link.onclick = (e) => {
-        console.log('link clicked');
+//         console.log('link clicked');
         let linkURL;
         if (!e.currentTarget.href){
-             console.log(e.target.href);
+//              console.log(e.target.href);
             linkURL = e.target.href;
            }else {
-             console.log(e.currentTarget.href);
+//              console.log(e.currentTarget.href);
              linkURL = e.currentTarget.href;
            }
         e.preventDefault();
@@ -33,7 +33,7 @@
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
         onComplete: function(){
-          console.log('navigating');
+//           console.log('navigating');
           window.location = linkURL;
         }
        },'>')
