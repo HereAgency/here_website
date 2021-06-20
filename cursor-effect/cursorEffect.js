@@ -125,7 +125,6 @@ class MagneticCursor {
       );
       if (hypotenuse < triggerDistance) {
         if(single.classList.contains("black-link")){
-          console.log('contains black');
           gsap.to(this.el, {
             left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
             top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
