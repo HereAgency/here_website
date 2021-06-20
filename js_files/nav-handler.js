@@ -14,13 +14,13 @@ $(document).ready(function(){
   $("#navbar").mouseenter(function(){
     if ($( "#navbar" ).hasClass( "nav-scrolled" )){
       $('.nav-item').css({"transform":"translateY(0px)", "opacity":"1"});
-      $('.hamburger-menu').css({"transform":"translateX(48px)", "opacity": "0"});
+      $('.hamburger').css({"transform":"translateX(48px)", "opacity": "0"});
     }
   });
   $("#navbar").mouseleave(function(){
     if ($( "#navbar" ).hasClass( "nav-scrolled" )){
       $('.nav-item').css({"transform":"translateY(-48px)", "opacity":"0"});
-      $('.hamburger-menu').css({"transform":"translateX(0)", "opacity":"1"});
+      $('.hamburger').css({"transform":"translateX(0)", "opacity":"1"});
     }
   });
 });
