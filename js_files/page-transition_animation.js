@@ -1,7 +1,7 @@
 //PAGE TRANSITION LOADING ANIMATION
 //   let links = document.querySelectorAll('a');
 
-  let links = document.querySelectorAll("[href^='https://here-agency-new-2021/']");
+  let links = document.querySelectorAll("[href^='/']");
   if (links){
     links.forEach ((link) => {
       link.onclick = (e) => {
