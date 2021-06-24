@@ -15,6 +15,9 @@
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
+	
+	console.log('support.animations: ' + support.animations);
+	
 	function init() {
 		console.log('Entered init()');
 		var onEndInitialAnimation = function() {
