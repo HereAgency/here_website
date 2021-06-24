@@ -1,21 +1,22 @@
-//PAGE TRANSITION LOADING ANIMATION
-//   let links = document.querySelectorAll('a');
+//PAGE TRANSITION - CURTAIN UP
 
+  //select all internal pages:
   let links = document.querySelectorAll("[href^='/']");
   if (links){
     links.forEach ((link) => {
       link.onclick = (e) => {
-//         console.log('link clicked');
+        
         let linkURL;
         if (!e.currentTarget.href){
-//              console.log(e.target.href);
             linkURL = e.target.href;
            }else {
-//              console.log(e.currentTarget.href);
              linkURL = e.currentTarget.href;
            }
-        e.preventDefault();
-        pageAnimation(linkURL);
+        //TO PREVENT TRIGGER THE CURTAIN WHEN CLICK ON CONTACT DRAWER:
+//         if (linkURL != 'https://cdpn.io/contact'){
+          e.preventDefault();
+          pageAnimation(linkURL);
+//         }
       }
     });
   }
@@ -24,6 +25,7 @@
     let pageLoader = document.querySelector('.pg-trans-anim');
     let pgTl = gsap.timeline();
     
+    //TIMELINE TO ANIMATE THE CURTAIN BEFORE UNLOAD THE PAGE:
     pgTl
       .to(pageLoader, {
         duration: 0.01,
@@ -39,13 +41,6 @@
           window.location = linkURL;
         }
        },'>')
-        //Animate the reveal box from full height to the top with no height
-//       .to(pageLoader, {
-//         duration: 0.8,
-//         transform: 'scale3d(1,0,1)',
-//         transformOrigin: '50% 0%',
-//         ease: Power4.easeOut,
-//       },'>')
       .to(pageLoader,{
         duration:1,
         display:'none'
