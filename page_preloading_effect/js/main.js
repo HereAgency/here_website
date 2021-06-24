@@ -17,6 +17,7 @@
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 	function init() {
 		var onEndInitialAnimation = function() {
+			console.log('onEndInitialAnimation');
 			if( support.animations ) {
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
@@ -36,6 +37,8 @@
 		}
 	}
 	function startLoading() {
+		
+		console.log('startLoading');
 		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
 		setTimeout(function (time) {
