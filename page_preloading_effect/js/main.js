@@ -16,6 +16,7 @@
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 	function init() {
+		console.log('Entered init()');
 		var onEndInitialAnimation = function() {
 			console.log('onEndInitialAnimation');
 			if( support.animations ) {
