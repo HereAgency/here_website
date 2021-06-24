@@ -15,7 +15,8 @@
 		header = container.querySelector( 'div.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
-	
+	console.log('animEndEventNames: ' + animEndEventNames);
+	console.log('animEndEventName: ' +animEndEventName);
 	console.log('support.animations: ' + support.animations);
 	
 	function init() {
@@ -24,6 +25,7 @@
 			console.log('onEndInitialAnimation');
 			if( support.animations ) {
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
+				console.log('removeEventListener( animEndEventName');
 			}
 			startLoading();
 		};
@@ -37,6 +39,7 @@
 
 		if( support.animations ) {
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
+			console.log('if( support.animations )');
 		}
 		else {
 			onEndInitialAnimation();
