@@ -27,6 +27,8 @@
 			}
 			startLoading();
 		};
+		
+		console.log(onEndInitialAnimation);
 		// disable scrolling
 		window.addEventListener( 'scroll', noscroll );
 
