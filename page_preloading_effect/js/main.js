@@ -15,22 +15,14 @@
 		header = container.querySelector( '.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
-	console.log('animEndEventNames: ' + animEndEventNames);
-	console.log('animEndEventName: ' +animEndEventName);
-	console.log('support.animations: ' + support.animations);
 	
 	function init() {
-		console.log('Entered init()');
 		var onEndInitialAnimation = function() {
-			console.log('onEndInitialAnimation');
 			if( support.animations ) {
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
-				console.log('removeEventListener( animEndEventName');
 			}
 			startLoading();
 		};
-		
-		console.log(onEndInitialAnimation);
 		// disable scrolling
 		window.addEventListener( 'scroll', noscroll );
 
@@ -39,15 +31,12 @@
 
 		if( support.animations ) {
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
-			console.log('if( support.animations )');
 		}
 		else {
 			onEndInitialAnimation();
 		}
 	}
 	function startLoading() {
-		
-		console.log('startLoading');
 		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
 		setTimeout(function (time) {
