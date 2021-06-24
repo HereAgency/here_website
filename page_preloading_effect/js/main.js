@@ -11,8 +11,8 @@
 (function() {
 	var support = 
 		{ animations : Modernizr.cssanimations },
-		container = document.querySelector( '.ha-section.ip-container' ),
-		header = container.querySelector( 'div.ip-header' ),
+		container = document.querySelector( '.ip-container' ),
+		header = container.querySelector( '.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 	console.log('animEndEventNames: ' + animEndEventNames);
