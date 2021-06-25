@@ -48,7 +48,7 @@ hamburgerIconTrigger.on("click", function() {
     if ($("#navbar").hasClass("dark")) {
         return;
     } else {
-         $("#navbar").addClass("dark");
+         $("#navbar").removeClass("light").addClass("dark");
     }
 });
 
