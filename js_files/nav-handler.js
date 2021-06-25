@@ -45,10 +45,10 @@ $(document).scroll(function() {
 
 var hamburgerIconTrigger = $("#hamburger-mobile-trigger");
 hamburgerIconTrigger.on("click", function() {
-    if ($(this).hasClass("dark")) {
+    if ($("#navbar").hasClass("dark")) {
         return;
     } else {
-         $("#navbar").addClass("light");
+         $("#navbar").addClass("dark");
     }
 });
 
