@@ -43,7 +43,7 @@ $(document).scroll(function() {
 
 //HAMBURGER ICON COLOR CHANGE ON OPEN
 
-var hamburgerIconTrigger = $(#hamburger-mobile-trigger);
+var hamburgerIconTrigger = $("#hamburger-mobile-trigger");
 hamburgerIconTrigger.on("click", function() {
     if ($(this).hasClass("dark")) {
         return;
