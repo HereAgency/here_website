@@ -1,15 +1,19 @@
 $('document').ready(function () {
   //Triggers images when in viewport:
   inView('.img-trigger').on('enter', function (elImg) {
+    console.log('entered inView');
     if (elImg.classList.contains('hasClassTriggered')) {//Check if element has already revealed
       return;
     } else {
+  console.log('call function');
       revealImage(elImg);// Call function to animate image revealer
       elImg.classList.add('hasClassTriggered'); // Make sure each image triggers the animation only once
     }
   });
   
   function revealImage(element) {
+    
+  console.log('entered function');
     var reveal = element.querySelector('.img-revealer');
     var img = element.querySelector('.img-trigger a');
     var tl = gsap.timeline(); //Local timeline
