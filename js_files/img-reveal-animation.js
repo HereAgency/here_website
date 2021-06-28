@@ -11,7 +11,7 @@ $('document').ready(function () {
   
   function revealImage(element) {
     var reveal = element.querySelector('.img-revealer');
-    var img = element.querySelector('.img-trigger img');
+    var img = element.querySelector('.img-trigger a');
     var tl = gsap.timeline(); //Local timeline
 
     tl.to(reveal, { // Make the revealer visibile
