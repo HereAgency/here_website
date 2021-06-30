@@ -19,7 +19,7 @@
 	
 	function init() {
 		var onEndInitialAnimation = function() {
-			if( support.animations ) { 	
+			if( support.animations ) {
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
 			startLoading();
@@ -30,7 +30,7 @@
 		// initial animation
 		container.classList.add('loading');
 		
-		//Detects whether or not elements can be animated using CSS
+		//Check if animation has ended
 		if( support.animations ) {
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
 		}
@@ -39,34 +39,31 @@
 		}
 	}
 	function startLoading() {
-		// simulate loading something.. (logo for 2.6s)
-		let time=2600;
+		let time=2600; // Time the loader plays
 		setTimeout(function (time) {
 			container.classList.remove('loading');
 			container.classList.add('loaded');
 
 			var onEndHeaderAnimation = function (ev) {
 				if (support.animations) {
-				console.log('line 51 '+support.animations);
 					if (ev.target !== header) return;
 					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
-				console.log('add layout-switch');
 				document.body.classList.add('layout-switch');
+				
+				//Enable scroll after preloader finishes
 				window.removeEventListener('scroll', noscroll);
 			};
 			
-			console.log('line 58 '+ support.animations);
-			console.log('header: '+header);
+			//Check if curtain up animation has finished:
 			if (support.animations) {
-				console.log('animEnd: '+animEndEventName);
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
 			} else {
 				onEndHeaderAnimation();
 			}
 		}, time);
 	}
-	//Enable the scroll after loader finishes
+	//function to desable scroll
 	function noscroll() {
 		window.scrollTo( 0, 0 );
 	}
