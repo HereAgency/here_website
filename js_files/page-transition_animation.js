@@ -20,7 +20,7 @@
         console.log("HostNameURL: "+hostNameURL);
         console.log("Clicked on: "+linkURL);
         console.log('currentPage: '+currentPage);
-
+        console.log('hostNameURL+workSection: ' + hostNameURL+workSection);
         
         //If current page is Home page or work section and the user clicks on "work", don't trigger page transition:
         if( ((currentPage === hostNameURL) || (currentPage === (hostNameURL + workSection)) )
