@@ -20,10 +20,10 @@
 	function init() {
 		var onEndInitialAnimation = function() {
 			if( support.animations ) { 
-				console.log('support.animations');		
+				console.log('line 23 '+support.animations);		
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
-			console.log('line 26');
+			console.log('call startLoading()');
 			startLoading();
 		};
 		// disable scrolling
@@ -34,7 +34,7 @@
 
 		//Detects whether or not elements can be animated using CSS
 		if( support.animations ) {
-			console.log('container.addEvent');
+			console.log('line 37 '+support.animations);
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
 		}
 		else {
@@ -42,7 +42,7 @@
 		}
 	}
 	function startLoading() {
-		console.log('line 45');
+		console.log('entered startloading()');
 		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
 		setTimeout(function (time) {
