@@ -20,7 +20,7 @@
         
         //If current page is the Home page and the link is "work", don't trigger page transition.
 //         if( (currentPage === pageProtocol + "//" + hostName) 
-           && () )
+//            && () )
           
         console.log('currentPage: '+currentPage);
         console.log('hostName: '+hostName);
