@@ -23,6 +23,7 @@
 				console.log('support.animations');		
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
+			console.log('line 26');
 			startLoading();
 		};
 		// disable scrolling
@@ -41,6 +42,7 @@
 		}
 	}
 	function startLoading() {
+		console.log('line 45');
 		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
 		setTimeout(function (time) {
