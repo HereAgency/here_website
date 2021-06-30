@@ -58,6 +58,7 @@
 			
 			console.log('line 58 '+ support.animations);
 			if (support.animations) {
+				console.log(animEndEventName);
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
 			} else {
 				onEndHeaderAnimation();
