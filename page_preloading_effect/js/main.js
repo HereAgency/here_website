@@ -28,7 +28,8 @@
 		window.addEventListener( 'scroll', noscroll );
 
 		// initial animation
-
+		container.classList.add('loading');
+		
 		//Detects whether or not elements can be animated using CSS
 		if( support.animations ) {
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
