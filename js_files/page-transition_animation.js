@@ -14,6 +14,14 @@
            }
         var currentPage = window.location.href;
         var hostName = window.location.hostname;
+        var pageProtocol = window.location.protocol;
+        console.log('url: '+pageProtocol + "//" + hostName);
+        console.log(linkURL);
+        
+        //If current page is the Home page and the link is "work", don't trigger page transition.
+//         if( (currentPage === pageProtocol + "//" + hostName) 
+           && () )
+          
         console.log('currentPage: '+currentPage);
         console.log('hostName: '+hostName);
           e.preventDefault();
