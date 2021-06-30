@@ -57,8 +57,9 @@
 			};
 			
 			console.log('line 58 '+ support.animations);
+			console.log('header: '+header);
 			if (support.animations) {
-				console.log(animEndEventName);
+				console.log('animEnd: '+animEndEventName);
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
 			} else {
 				onEndHeaderAnimation();
