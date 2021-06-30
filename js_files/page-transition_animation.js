@@ -15,18 +15,19 @@
         var currentPage = window.location.href;
         var hostName = window.location.hostname;
         var pageProtocol = window.location.protocol;
-        console.log('url: '+pageProtocol + "//" + hostName);
-        console.log(linkURL);
-        
-        //If current page is the Home page and the link is "work", don't trigger page transition.
-//         if( (currentPage === pageProtocol + "//" + hostName) 
-//            && () )
-          
+        var HostNameURL = pageProtocol + "//" + hostName;
+        console.log("HostNameURL: "+HostNameURL);
+        console.log("Clicked on: "+linkURL);
         console.log('currentPage: '+currentPage);
-        console.log('hostName: '+hostName);
-          e.preventDefault();
-          pageAnimation(linkURL);
 
+        
+        //If current page is Home page and the user clicks on "work", don't trigger page transition:
+        if( (currentPage === HostNameURL) && (linkURL === HostNameURL+"/#work") ){
+          return;
+        } else{
+          e.preventDefault();
+          pageAnimation(linkURL);        
+        }
       }
     });
   }
