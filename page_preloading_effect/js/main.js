@@ -54,8 +54,9 @@
 				document.body.classList.add('layout-switch');
 				window.removeEventListener('scroll', noscroll);
 			};
+			
+			console.log('line 58 '+ support.animations);
 			if (support.animations) {
-				console.log('line 58 '+support.animations);
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
 			} else {
 				onEndHeaderAnimation();
