@@ -19,22 +19,18 @@
 	
 	function init() {
 		var onEndInitialAnimation = function() {
-			if( support.animations ) { 
-				console.log('line 23 '+support.animations);		
+			if( support.animations ) { 	
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
-			console.log('call startLoading()');
 			startLoading();
 		};
 		// disable scrolling
 		window.addEventListener( 'scroll', noscroll );
 
 		// initial animation
-		container.classList.add('loading');
 
 		//Detects whether or not elements can be animated using CSS
 		if( support.animations ) {
-			console.log('line 37 '+support.animations);
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
 		}
 		else {
@@ -42,7 +38,6 @@
 		}
 	}
 	function startLoading() {
-		console.log('entered startloading()');
 		// simulate loading something.. (logo for 2.6s)
 		let time=2600;
 		setTimeout(function (time) {
@@ -51,13 +46,16 @@
 
 			var onEndHeaderAnimation = function (ev) {
 				if (support.animations) {
+				console.log('line 51 '+support.animations);
 					if (ev.target !== header) return;
 					this.removeEventListener(animEndEventName, onEndHeaderAnimation);
 				}
+				console.log('add layout-switch');
 				document.body.classList.add('layout-switch');
 				window.removeEventListener('scroll', noscroll);
 			};
 			if (support.animations) {
+				console.log('line 58 '+support.animations);
 				header.addEventListener(animEndEventName, onEndHeaderAnimation);
 			} else {
 				onEndHeaderAnimation();
