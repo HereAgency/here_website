@@ -15,14 +15,14 @@
         var currentPage = window.location.href;
         var hostName = window.location.hostname;
         var pageProtocol = window.location.protocol;
-        var HostNameURL = pageProtocol + "//" + hostName;
-        console.log("HostNameURL: "+HostNameURL);
+        var hostNameURL = pageProtocol + "//" + hostName;
+        console.log("HostNameURL: "+hostNameURL);
         console.log("Clicked on: "+linkURL);
         console.log('currentPage: '+currentPage);
 
         
         //If current page is Home page and the user clicks on "work", don't trigger page transition:
-        if( (currentPage === HostNameURL) && (linkURL === HostNameURL+"/#work") ){
+        if( (currentPage === hostNameURL) && (linkURL === hostNameURL+"/#work") ){
           return;
         } else{
           e.preventDefault();
