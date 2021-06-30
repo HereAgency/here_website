@@ -15,7 +15,7 @@
         var currentPage = window.location.href;
         var hostName = window.location.hostname;
         var pageProtocol = window.location.protocol;
-        var hostNameURL = pageProtocol + "//" + hostName + "/";
+        var hostNameURL = pageProtocol + "//" + hostName;
         var workSection = '/#work';
         console.log("HostNameURL: "+hostNameURL);
         console.log("Clicked on: "+linkURL);
@@ -23,7 +23,7 @@
         console.log('hostNameURL+workSection: ' + hostNameURL+workSection);
         
         //If current page is Home page or work section and the user clicks on "work", don't trigger page transition:
-        if( ((currentPage == hostNameURL) || (currentPage == (hostNameURL + workSection)) )
+        if( ((currentPage == (hostNameURL + "/")) || (currentPage == (hostNameURL + workSection)) )
            && (linkURL == hostNameURL+workSection) ){
           return;
         } else{
