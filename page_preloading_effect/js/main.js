@@ -9,16 +9,18 @@
  * http://www.codrops.com
  */
 (function() {
-	var support = 
+	var support =
 		{ animations : Modernizr.cssanimations },
 		container = document.querySelector( '.ip-container' ),
 		header = container.querySelector( '.ip-header' ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
+	    	//Modernizr.prefixed takes a string css value in the DOM style camelCase form and returns the version of that property that the browser actually supports
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 	
 	function init() {
 		var onEndInitialAnimation = function() {
-			if( support.animations ) {
+			if( support.animations ) { 
+				console.log('support.animations');		
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
 			}
 			startLoading();
@@ -29,7 +31,9 @@
 		// initial animation
 		container.classList.add('loading');
 
+		//Detects whether or not elements can be animated using CSS
 		if( support.animations ) {
+			console.log('container.addEvent');
 			container.addEventListener( animEndEventName, onEndInitialAnimation );
 		}
 		else {
