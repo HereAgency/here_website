@@ -12,11 +12,13 @@
            }else {
              linkURL = e.currentTarget.href;
            }
-        //TO PREVENT TRIGGER THE CURTAIN WHEN CLICK ON CONTACT DRAWER:
-//         if (linkURL != 'https://cdpn.io/contact'){
+        var currentPage = window.location.href;
+        var hostName = window.location.hostname;
+        console.log('currentPage: '+currentPage);
+        console.log('hostName: '+hostName);
           e.preventDefault();
           pageAnimation(linkURL);
-//         }
+
       }
     });
   }
