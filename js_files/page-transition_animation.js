@@ -1,26 +1,21 @@
 //PAGE TRANSITION - CURTAIN UP
 
-  //select all internal pages:
+  //Select only links to internal pages:
   let links = document.querySelectorAll("[href^='/']");
   if (links){
     links.forEach ((link) => {
       link.onclick = (e) => {
-        
         let linkURL;
         if (!e.currentTarget.href){
-            linkURL = e.target.href;
-           }else {
-             linkURL = e.currentTarget.href;
-           }
-        var currentPage = window.location.href;
-        var hostName = window.location.hostname;
-        var pageProtocol = window.location.protocol;
-        var hostNameURL = pageProtocol + "//" + hostName;
-        var workSection = '/#work';
-        console.log("HostNameURL: "+hostNameURL);
-        console.log("Clicked on: "+linkURL);
-        console.log('currentPage: '+currentPage);
-        console.log('hostNameURL+workSection: ' + hostNameURL+workSection);
+          linkURL = e.target.href;
+        }else {
+          linkURL = e.currentTarget.href;
+        }
+        let currentPage = window.location.href;
+        let hostName = window.location.hostname;
+        let pageProtocol = window.location.protocol;
+        let hostNameURL = pageProtocol + "//" + hostName;
+        let workSection = '/#work';
         
         //If current page is Home page or work section and the user clicks on "work", don't trigger page transition:
         if( ((currentPage == (hostNameURL + "/")) || (currentPage == (hostNameURL + workSection)) )
@@ -34,11 +29,10 @@
     });
   }
   function pageAnimation(linkURL){
-    // console.log(e);
     let pageLoader = document.querySelector('.pg-trans-anim');
     let pgTl = gsap.timeline();
-    
-    //TIMELINE TO ANIMATE THE CURTAIN BEFORE UNLOAD THE PAGE:
+
+    // Timeline to animate the curtain before unload the page
     pgTl
       .to(pageLoader, {
         duration: 0.01,
@@ -50,7 +44,6 @@
         transformOrigin: '50% 100%',
         ease: Power4.easeOut,
         onComplete: function(){
-//           console.log('navigating');
           window.location = linkURL;
         }
        },'>')
@@ -58,6 +51,4 @@
         duration:1,
         display:'none'
       }, '>');
-  }
-  // ******END PAGE ANIMATION ***********
-  
+  } 
