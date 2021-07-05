@@ -27,21 +27,29 @@ $('document').ready(function () {
 	// disable scrolling
 	window.addEventListener( 'scroll', noscroll );
 
-	// initial animation
-	container.classList.add('loading');
-
-	// check if animation has ended
-	if( support.animations ) {
-		container.addEventListener( animEndEventName, onEndInitialAnimation );
-	}
-	else {
-		onEndInitialAnimation();
+	// initial animation - only when site loads for the first time
+	if ( ! sessionStorage.getItem( 'doNotShow' ) ) {
+		sessionStorage.setItem( 'doNotShow', true );
+		container.classList.add('loading');
+		//Check if animation has ended
+		if( support.animations ) {
+			container.addEventListener( animEndEventName, onEndInitialAnimation );
+		}
+	} else {
+		startLoading();
 	}
 
 	function startLoading() {
-		let time=2600; // Time the loader plays
+		let time; // Time the animation plays
+		if(container.classList.contains('loading')){
+			time=2600; //if showing preloader
+		} else {
+			time = 1000; //if showing only 'curtain up' animation
+		}
 		setTimeout(function (time) {
-			container.classList.remove('loading');
+			if(container.classList.contains('loading')){
+				container.classList.remove('loading');
+			}
 			container.classList.add('loaded');
 
 			var onEndHeaderAnimation = function (ev) {
