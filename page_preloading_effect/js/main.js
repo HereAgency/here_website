@@ -42,7 +42,7 @@ $('document').ready(function () {
 	function startLoading() {
 		let time; // Time the animation plays
 		if(container.classList.contains('loading')){
-			time=3000; //if showing preloader
+			time=5000; //if showing preloader
 		} else {
 			time = 500; //if showing only 'curtain up' animation
 		}
