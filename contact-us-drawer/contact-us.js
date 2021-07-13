@@ -142,8 +142,8 @@ function contactDrawerExpand(){
   
   //Reveal back button
   setTimeout( function() {
-    backButton.fadeIn();
-  }, 400);
+    backButton.css({ "opacity":"1"}, 400);
+  }, 800);
   setTimeout( function() {
     backButton.removeClass("hidden");
   }, 400);
@@ -151,22 +151,24 @@ function contactDrawerExpand(){
 
 function goBack(){
   let expandedDrawer = contactDrawer;
-  setTimeout( function() {
-    expandedDrawer.removeClass("expanded-drawer");
-    contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400);
-  }, 400);
-  //Show buttonPanel
-  setTimeout(function () {
-    buttonPanel.fadeIn(400);
-  }, 400);
+  if (expandedDrawer.hasClass("expanded-drawer")){
+    setTimeout( function() {
+      expandedDrawer.removeClass("expanded-drawer");
+      contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400);
+    }, 400);
+    //Show buttonPanel
+    setTimeout(function () {
+      buttonPanel.fadeIn(400);
+    }, 400);
 
-  hideBackButton();
-  resetPanels();
+    hideBackButton();
+    resetPanels();
+  }
 }
 
 function hideBackButton(){  
   setTimeout(function () {
-    backButton.fadeOut(400);
+    backButton.css({ "opacity":"0"}, 400);
   }, 400);
 }
 
