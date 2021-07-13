@@ -31,11 +31,11 @@ function toggleScrolling() {
 // CONTACT DRAWER HANDLER
 
 // Drawer Globals
-let docHeight = window.innerHeight;
+let getDocHeight = window.innerHeight;
 const overlay = $(".overlay"); 
 const contactDrawer = $(".contact-drawer");
 let drawerHeight = contactDrawer.css( "height" );
-let drawerInitialPosition = contactDrawer.css("top", docHeight);
+let drawerInitialPosition = contactDrawer.css("top", getDocHeight);
 
 // Buttons and Panels
 let buttonPanel = $('#button-panel')
