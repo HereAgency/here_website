@@ -19,10 +19,11 @@
         
         //If current page is Home page or work section and the user clicks on "work", don't trigger page transition:
         if( ((currentPage == (hostNameURL + "/")) || (currentPage == (hostNameURL + workSection)) )
-           && (linkURL == hostNameURL+workSection) )
-           || (e.currentTarget.id == "lets-talk"){
+           && (linkURL == hostNameURL+workSection) ){
           return;
-        } else {
+        } else if (e.currentTarget.id == "lets-talk"){
+          return;
+        }else {
           e.preventDefault();
           pageAnimation(linkURL);        
         }
