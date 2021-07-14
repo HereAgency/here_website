@@ -181,7 +181,7 @@ function resetPanels(){
   drawerCol.removeClass('clicked');
 }
 
-$("#lets-talk").on("click", function(evt){
+$(".lets-talk-button").on("click", function(evt){
   console.log('lets talk clicked');
   evt.preventDefault();
   contactDrawerOpen()
