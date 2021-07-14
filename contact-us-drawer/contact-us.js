@@ -53,6 +53,8 @@ function clearDrawerStyles(){
 }
 
 function contactDrawerOpen(){
+  console.log('contactDrawerOpen()');
+  
   if(contactDrawer.hasClass("open-drawer")){
     return
   }
@@ -180,6 +182,7 @@ function resetPanels(){
 }
 
 $("#lets-talk").on("click", function(evt){
+  console.log('lets talk clicked');
   evt.preventDefault();
   contactDrawerOpen()
 });
