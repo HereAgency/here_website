@@ -31,6 +31,7 @@ function toggleScrolling() {
 // CONTACT DRAWER HANDLER
 
 // Drawer Globals
+let mobileMedia = window.matchMedia("(max-width:500px)");
 let getDocHeight = window.innerHeight;
 const overlay = $(".overlay"); 
 const contactDrawer = $(".contact-drawer");
@@ -68,7 +69,11 @@ function contactDrawerOpen(){
     }, 20);
     //Move drawer up
     contactDrawer.addClass("open-drawer");
-    contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400);
+    if(mobileMedia.matches){
+      contactDrawer.css({"transform":"translateY(-100vh)", "opacity":"1"}, 400); 
+    } else {
+      contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400); 
+    }
     setTimeout(function () {
       buttonPanel.fadeIn(400);
     }, 400);
@@ -156,7 +161,9 @@ function goBack(){
   if (expandedDrawer.hasClass("expanded-drawer")){
     setTimeout( function() {
       expandedDrawer.removeClass("expanded-drawer");
-      contactDrawer.css({"height":"40vw", "transform":"translateY(-40vw)", "opacity":"1"}, 400);
+      if(!mobileMedia.matches){
+        expandedDrawer.css({"height":"40vw","transform":"translateY(-40vw)", "opacity":"1"}, 400);
+      }
     }, 400);
     //Show buttonPanel
     setTimeout(function () {
