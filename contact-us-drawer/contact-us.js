@@ -154,7 +154,7 @@ function goBack(){
   if (expandedDrawer.hasClass("expanded-drawer")){
     setTimeout( function() {
       expandedDrawer.removeClass("expanded-drawer");
-      contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400);
+      contactDrawer.css({"height":"40vw", "transform":"translateY(-40vw)", "opacity":"1"}, 400);
     }, 400);
     //Show buttonPanel
     setTimeout(function () {
