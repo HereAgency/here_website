@@ -70,7 +70,7 @@ function contactDrawerOpen(){
     //Move drawer up
     contactDrawer.addClass("open-drawer");
     if(mobileMedia.matches){
-      contactDrawer.css({"transform":"translateY(-100vh)", "opacity":"1"}, 400); 
+      contactDrawer.css({"transform":"translateY(-80vh)", "opacity":"1"}, 400); 
     } else {
       contactDrawer.css({"transform":"translateY(-40vw)", "opacity":"1"}, 400); 
     }
