@@ -124,33 +124,30 @@ function contactDrawerExpand(){
       .fadeOut(400, function(){
         contactDrawer.addClass("expanded-drawer");
       
-      if(mobileMedia.matches){
-        contactDrawer.css({"height":"100%","transform":"translateY(-100%)"});
-      } else {
+      if(!mobileMedia.matches){
         contactDrawer.css({"height":"100vh","transform":"translateY(-100vh)"});
       }
-      
 
-         // Open the right panel
-        if(openDrawer && startButton.hasClass("clicked")){
-          setTimeout( function() {
-            console.log('startPanel');
-            startPanel.fadeIn();
-          }, 400);
-        } else if(openDrawer && callButton.hasClass("clicked")){
-          setTimeout( function() {
-            console.log('callPanel');
-            callPanel.fadeIn();
-          }, 400);
-        } else if(openDrawer && workButton.hasClass("clicked")){
-          setTimeout( function() {
-            console.log('workPanel');
-            workPanel.fadeIn();
-          }, 400);
-        }else{
-          return;
-        }
+       // Open the right panel
+      if(openDrawer && startButton.hasClass("clicked")){
+        setTimeout( function() {
+          console.log('startPanel');
+          startPanel.fadeIn();
+        }, 400);
+      } else if(openDrawer && callButton.hasClass("clicked")){
+        setTimeout( function() {
+          console.log('callPanel');
+          callPanel.fadeIn();
+        }, 400);
+      } else if(openDrawer && workButton.hasClass("clicked")){
+        setTimeout( function() {
+          console.log('workPanel');
+          workPanel.fadeIn();
+        }, 400);
+      }else{
+        return;
       }
+    }
               );
   
   //Reveal back button
