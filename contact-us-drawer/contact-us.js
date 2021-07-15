@@ -123,7 +123,13 @@ function contactDrawerExpand(){
     buttonPanel
       .fadeOut(400, function(){
         contactDrawer.addClass("expanded-drawer");
+      
+      if(mobileMedia.matches){
+        contactDrawer.css({"height":"100%","transform":"translateY(-100%)"});
+      } else {
         contactDrawer.css({"height":"100vh","transform":"translateY(-100vh)"});
+      }
+      
 
          // Open the right panel
         if(openDrawer && startButton.hasClass("clicked")){
