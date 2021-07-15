@@ -89,7 +89,12 @@ function contactDrawerClose(){
     }, 20);
     //Hide Drawer
     contactDrawer.removeClass("open-drawer expanded-drawer");
-    contactDrawer.css({"height":"40vw","transform":"translateY(100vh)", "opacity":"0"});
+    if(mobileMedia.matches){
+      contactDrawer.css({"height":"100%","transform":"translateY(100vh)", "opacity":"0"});
+    } else {
+      contactDrawer.css({"height":"40vw","transform":"translateY(100vh)", "opacity":"0"});
+    }
+    
     //Toggle Scrolling back on
     setTimeout(function () {
       toggleScrolling()
@@ -104,7 +109,12 @@ function contactDrawerClose(){
     }, 20);
     //Hide Drawer
     contactDrawer.removeClass("open-drawer");
-    contactDrawer.css({"transform":"translateY(40vw)", "opacity":"0"}, 400);
+    
+    if(mobileMedia.matches){
+      contactDrawer.css({"transform":"translateY(100%)", "opacity":"0"}, 400);
+    } else {
+      contactDrawer.css({"transform":"translateY(40vw)", "opacity":"0"}, 400);
+    }
     //Toggle Scrolling back on
     setTimeout(function () {
       toggleScrolling()
