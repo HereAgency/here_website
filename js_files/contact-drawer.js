@@ -90,7 +90,7 @@ function contactDrawerClose(){
     //Hide Drawer
     contactDrawer.removeClass("open-drawer expanded-drawer");
     if(mobileMedia.matches){
-      contactDrawer.css({"height":"100%","transform":"translateY(100vh)", "opacity":"0"});
+      contactDrawer.css({"height":"100vh","transform":"translateY(100%)", "opacity":"0"});
     } else {
       contactDrawer.css({"height":"40vw","transform":"translateY(100vh)", "opacity":"0"});
     }
