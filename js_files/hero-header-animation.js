@@ -13,10 +13,11 @@ function heroHeadAnimation() {
 		y: 64,
 		skewY: "3deg",
 	}, {
-        	duration: 0.2,
+        	duration: 0.4,
 		opacity: 1,
 		y: 0,
 		skewY: "0deg",
+   		ease: Power1.easeOut,	
       }, '>');
 	if (blurbWrapper){
 		tlHero
@@ -30,6 +31,7 @@ function heroHeadAnimation() {
 			opacity: 1,
 			y: 0,
 			skewY: "0deg",
+			ease: Power1.easeOut,	
 		}, '>');
 	}	
 }
