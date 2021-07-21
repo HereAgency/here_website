@@ -10,16 +10,20 @@ function navBarAnimation() {
     tlNav
       .fromTo(navBar, {
 	opacity: 0,
+	yPercent: -100,
     }, {
 	duration: 0.5,
 	opacity: 1,
+	yPercent: 0,
 	ease: Power1.easeOut
     }, '>')
       .fromTo(navBarMobile, {
 	opacity: 0,
+	yPercent: -100,
     }, {
         duration: 0.5,
 	opacity: 1,
+	yPercent: 0,
 	ease: Power1.easeOut
     }, '>');
 }
