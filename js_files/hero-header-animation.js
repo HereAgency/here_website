@@ -9,14 +9,14 @@ function heroHeadAnimation() {
     // GSAP timeline to animate the text
     tlHero
       .fromTo(mainWrapper, {
-				opacity: 0,
-				y: 64,
-				skewY: "3deg",
-			}, {
-        duration: 0.4,
-				opacity: 1,
-				y: 0,
-				skewY: "0deg",
+		opacity: 0,
+		y: 64,
+		skewY: "3deg",
+	}, {
+        	duration: 0.4,
+		opacity: 1,
+		y: 0,
+		skewY: "0deg",
       }, '>');
 	if (blurbWrapper){
 		tlHero
