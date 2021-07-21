@@ -8,24 +8,12 @@ function navBarAnimation() {
     let tlNav = gsap.timeline();
 	
     //Responsive
-    let isDesktop = window.matchMedia("(min-width: 501px)");
+    let isMobile = window.matchMedia("(max-width: 500px)");
 	
     // GSAP timeline to animate the text
-    //Desktop
-    if (x.matches) {
-	tlNav
-    	.fromTo(navBar, {
-		opacity: 0,
-		yPercent: -100,
-      	}, {
-		duration: 0.5,
-		opacity: 1,
-		yPercent: 0,
-		ease: Power1.easeOut
-      	});
-    }
+
     //Mobile
-    else {
+    if (isMobile.matches) {
 	tlNav
 	//Fade in
 	.fromTo(navBarMobile, {
@@ -43,5 +31,18 @@ function navBarAnimation() {
 		yPercent: 0,
 		ease: Power1.easeOut
     	}, '<');
+    }
+    //Desktop
+	else {
+	tlNav
+    	.fromTo(navBar, {
+		opacity: 0,
+		yPercent: -100,
+      	}, {
+		duration: 0.5,
+		opacity: 1,
+		yPercent: 0,
+		ease: Power1.easeOut
+      	});
     }
 }
