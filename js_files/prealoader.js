@@ -1,3 +1,8 @@
+var support =
+		{ animations : Modernizr.cssanimations },
+		container = document.querySelector( '.ip-container' ),
+		header = container.querySelector( '.ip-header' );
+    
 function startLoading() {
   let time; // Time the animation plays
   if(container.classList.contains('loading')){
@@ -20,6 +25,10 @@ function startLoading() {
 
       //Enable scroll after preloader finishes
       window.removeEventListener('scroll', noscroll);
+      
+      //Call animations functions for navbar and hero header
+      heroHeadAnimation();
+      navBarAnimation();
     };
 
     //Check if curtain up animation has finished:
