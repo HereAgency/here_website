@@ -2,7 +2,7 @@ function navBarAnimation() {
     //Header elements selectors
     let navBar = document.querySelectorAll('.navbar');
     let navBarMobile = document.querySelectorAll('.mobile-menu-section');
-    let navMobileHeight = document.querySelectorAll('.container.is--nav');
+    let navMobileHeight = document.querySelectorAll('.mobile-menu.is--nav');
 	
     //Local timeline
     let tlNav = gsap.timeline();
