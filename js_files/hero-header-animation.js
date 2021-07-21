@@ -13,7 +13,7 @@ function heroHeadAnimation() {
 		y: 64,
 		skewY: "3deg",
 	}, {
-        	duration: 0.4,
+        	duration: 0.2,
 		opacity: 1,
 		y: 0,
 		skewY: "0deg",
@@ -26,7 +26,7 @@ function heroHeadAnimation() {
 			skewY: "3deg",
 		}, {
 			duration: 0.4,
-			delay: 0.25,
+			delay: 0.1,
 			opacity: 1,
 			y: 0,
 			skewY: "0deg",
