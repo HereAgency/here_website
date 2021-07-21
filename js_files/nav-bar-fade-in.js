@@ -34,9 +34,10 @@ function navBarAnimation() {
 		transformOrigin: "0px 0px",
 		ease: Power1.easeOut
     	}, '<')
-      	.set(navMobileHeight, {
-		position: "fixed",
-	},'>');
+//       	.set(navMobileHeight, {
+// 		position: "fixed",
+// 	},'>')
+	    ;
     }
     //Desktop
 	else {
