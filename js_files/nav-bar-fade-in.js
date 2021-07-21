@@ -19,11 +19,11 @@ function navBarAnimation() {
     }, '>')
       .fromTo(navBarMobile, {
 	opacity: 0,
-	yPercent: -100,
+// 	yPercent: -100,
     }, {
         duration: 0.5,
 	opacity: 1,
-	yPercent: 0,
+// 	yPercent: 0,
 	ease: Power1.easeOut
     }, '>');
 }
