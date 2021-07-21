@@ -34,9 +34,12 @@ function heroHeadAnimation() {
 		skewY: "0deg",
 		ease: Power1.easeOut,	
 	}, '>');
-    }	
-	
-    if (homeWorkHeading){
+    }
+
+    //Responsive
+    let isMobile = window.matchMedia("(max-width: 500px)");
+    //Home page Work heading animaiton on Mobile
+    if (homeWorkHeading && isMobile.matches){
 	tlHero
 		.fromTo(homeWorkHeading, {
 		opacity: 0,
