@@ -27,11 +27,11 @@ function navBarAnimation() {
       	.fromTo(navMobileHeight, {
 // 		position: "absolute",
 // 		yPercent: -100,
-		transformOrigin: "0px -64px",
+		top: -64,
 	    }, {
 		duration: 0.5,
 // 		yPercent: 0,
-		transformOrigin: "0px 0px",
+		top: 0,
 		ease: Power1.easeOut
     	}, '<')
 //       	.set(navMobileHeight, {
