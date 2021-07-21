@@ -25,17 +25,18 @@ function navBarAnimation() {
 	})
 	//Slide from top
       	.fromTo(navMobileHeight, {
-		position: "absolute",
-		yPercent: -100,
+// 		position: "absolute",
+// 		yPercent: -100,
+		transformOrigin: "0px -64px",
 	    }, {
 		duration: 0.5,
-		yPercent: 0,
+// 		yPercent: 0,
+		transformOrigin: "0px 0px",
 		ease: Power1.easeOut
     	}, '<')
-	    
       	.set(navMobileHeight, {
 		position: "fixed",
-	});
+	},'>');
     }
     //Desktop
 	else {
