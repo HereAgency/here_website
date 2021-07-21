@@ -3,8 +3,8 @@ function heroHeadAnimation() {
     let tlHero = gsap.timeline();
 
     //Header elements selectors
-    let mainWrapper = document.querySelector('.text-wrapper-header.main-text-wrapper-header');
-    let blurbWrapper = document.querySelector('.text-wrapper-header.desc-text-wrapper-header');
+    let mainWrapper = document.querySelectorAll('.text-wrapper-header.main-text-wrapper-header');
+    let blurbWrapper = document.querySelectorAll('.text-wrapper-header.desc-text-wrapper-header');
 	
     // GSAP timeline to animate the text
     tlHero
