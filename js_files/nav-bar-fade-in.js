@@ -17,19 +17,19 @@ function navBarAnimation() {
 	opacity: 1,
 	yPercent: 0,
 	ease: Power1.easeOut
-    }, '>')
+    })
       .fromTo(navBarMobile, {
 	opacity: 0,
     }, {
         duration: 0.5,
 	opacity: 1,
 	ease: Power1.easeOut
-    }, '>')
+    })
       .fromTo(navMobileHeight, {
 	yPercent: -100,
     }, {
         duration: 0.5,
 	yPercent: 0,
 	ease: Power1.easeOut
-    }, '>');
+    }, '<');
 }
