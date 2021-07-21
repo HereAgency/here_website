@@ -60,6 +60,10 @@ function startLoading() {
 
       //Enable scroll after preloader finishes
       window.removeEventListener('scroll', noscroll);
+	    
+      //Call animation functions for navbar and hero header
+      heroHeadAnimation();
+      navBarAnimation();
     };
 
     //Check if curtain up animation has finished:
