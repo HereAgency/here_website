@@ -9,15 +9,17 @@ function navBarAnimation() {
     // GSAP timeline to animate the text
     tlNav
       .fromTo(navBar, {
-				opacity: 0,
-			}, {
-        duration: 0.5,
-				opacity: 1,
-      }, '>')
+	opacity: 0,
+    }, {
+	duration: 0.5,
+	opacity: 1,
+	ease: Power1.easeOut
+    }, '>')
       .fromTo(navBarMobile, {
-				opacity: 0,
-			}, {
+	opacity: 0,
+    }, {
         duration: 0.5,
-				opacity: 1,
-      }, '>');
+	opacity: 1,
+	ease: Power1.easeOut
+    }, '>');
 }
