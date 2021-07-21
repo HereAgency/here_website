@@ -25,10 +25,10 @@ function navBarAnimation() {
 	})
 	//Slide from top
       	.fromTo(navMobileHeight, {
-		yPercent: -100,
+		top: -64,
 	    }, {
 		duration: 0.5,
-		yPercent: 0,
+		top: 0,
 		ease: Power1.easeOut
     	}, '<');
     }
