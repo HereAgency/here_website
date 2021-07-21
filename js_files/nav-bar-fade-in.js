@@ -19,7 +19,7 @@ function navBarAnimation() {
 	.fromTo(navBarMobile, {
 		opacity: 0,
 	}, {
-		duration: 0.5,
+		duration: 0.2,
 		opacity: 1,
 		ease: Power1.easeOut
 	})
@@ -29,7 +29,7 @@ function navBarAnimation() {
 // 		yPercent: -100,
 		top: -64,
 	    }, {
-		duration: 0.5,
+		duration: 0.8,
 // 		yPercent: 0,
 		top: 0,
 		ease: Power1.easeOut
