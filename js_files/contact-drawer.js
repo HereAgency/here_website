@@ -204,7 +204,7 @@ function resetPanels(){
   drawerCol.removeClass('clicked');
 }
 
-$(".lets-talk-button").on("click", function(evt){
+$(".lets-talk-button, .footer-link-marquee").on("click", function(evt){
   console.log('lets talk clicked');
   evt.preventDefault();
   contactDrawerOpen()
