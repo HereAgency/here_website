@@ -10,9 +10,9 @@ function heroHeadAnimation() {
 	let homeMainWrapper = document.querySelectorAll('.home-main-text-animation');
 	let homeBlurbWrapper = document.querySelectorAll('.home-desc-text-animation');
 	
-	//Section header on Mobile
-	let homeSectionHeader = document.querySelectorAll('.section-heading.cs-animation');
-	let agencySectionHeader = document.querySelectorAll('.ha-heading.team-header-mb');
+	//Mobile section header
+	let homeWorkHeading = document.querySelectorAll('.section-heading.cs-animation');
+	let agencyWorkHeading = document.querySelectorAll('.ha-heading.team-header-mb');
 
 	//Check screen size
 	let isMobile = window.matchMedia("(max-width: 500px)");
@@ -48,10 +48,9 @@ function heroHeadAnimation() {
 				ease: Power1.easeOut,	
 			}, '>');
 		}
-		// If there's sectionHeader:
-		if (agencySectionHeader){
+		if (agencyWorkHeading){
 			tlHero
-				.fromTo(agencySectionHeader, {
+				.fromTo(agencyWorkHeading, {
 				opacity: 0,
 				y: 64,
 				skewY: "10deg",
@@ -65,7 +64,7 @@ function heroHeadAnimation() {
 			}, '>');
 		}
 		//If page is Home page:
-		if (sectionHeader && isMobile.matches){
+		if (homeWorkHeading && isMobile.matches){
 			tlHero
 				.fromTo(homeMainWrapper, {
 				opacity: 0,
@@ -90,7 +89,7 @@ function heroHeadAnimation() {
 				skewY: "0deg",
 				ease: Power1.easeOut,	
 			}, '>')
-				.fromTo(homeSectionHeader, {
+				.fromTo(homeWorkHeading, {
 				opacity: 0,
 				y: 64,
 				skewY: "10deg",
