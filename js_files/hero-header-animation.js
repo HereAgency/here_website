@@ -11,7 +11,8 @@ function heroHeadAnimation() {
 	let homeBlurbWrapper = document.querySelectorAll('.home-desc-text-animation');
 	
 	//Section header on Mobile
-	let sectionHeader = document.querySelectorAll('.section-heading');
+	let homeSectionHeader = document.querySelectorAll('.section-heading.cs-animation');
+	let agencySectionHeader = document.querySelectorAll('.ha-heading.team-header-mb');
 
 	//Check screen size
 	let isMobile = window.matchMedia("(max-width: 500px)");
@@ -48,9 +49,9 @@ function heroHeadAnimation() {
 			}, '>');
 		}
 		// If there's sectionHeader:
-		if (sectionHeader){
+		if (agencySectionHeader){
 			tlHero
-				.fromTo(sectionHeader, {
+				.fromTo(agencySectionHeader, {
 				opacity: 0,
 				y: 64,
 				skewY: "10deg",
@@ -89,7 +90,7 @@ function heroHeadAnimation() {
 				skewY: "0deg",
 				ease: Power1.easeOut,	
 			}, '>')
-				.fromTo(sectionHeader, {
+				.fromTo(homeSectionHeader, {
 				opacity: 0,
 				y: 64,
 				skewY: "10deg",
