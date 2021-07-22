@@ -62,6 +62,7 @@ function heroHeadAnimation() {
 				skewY: "0deg",
 				ease: Power1.easeOut,	
 			}, '>');
+		}
 		//If page is Home page:
 		if (sectionHeader && isMobile.matches){
 			tlHero
