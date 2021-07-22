@@ -16,8 +16,37 @@ function heroHeadAnimation() {
 
 	// MOBILE
 	if(isMobile.matches){
-		//If oage is Home page:
-		if (homeWorkHeading){
+		//All other pages mobile
+		tlHero
+			.fromTo(mainWrapper, {
+			opacity: 0,
+			y: 64,
+			skewY: "10deg",
+		}, {
+			duration: 0.4,
+			opacity: 1,
+			y: 0,
+			skewY: "0deg",
+			ease: Power1.easeOut,	
+		}, '>');
+		// If there's blurb heading:
+		if (blurbWrapper){
+			tlHero
+				.fromTo(blurbWrapper, {
+				opacity: 0,
+				y: 64,
+				skewY: "10deg",
+			}, {
+				duration: 0.4,
+				delay: 0.1,
+				opacity: 1,
+				y: 0,
+				skewY: "0deg",
+				ease: Power1.easeOut,	
+			}, '>');
+		}
+		//If page is Home page:
+		if (homeWorkHeading && isMobile.matches){
 			tlHero
 				.fromTo(homeMainWrapper, {
 				opacity: 0,
@@ -55,37 +84,6 @@ function heroHeadAnimation() {
 				ease: Power1.easeOut,	
 			}, '>');
 		} 
-		//All other pages mobile
-		else {
-			tlHero
-				.fromTo(mainWrapper, {
-				opacity: 0,
-				y: 64,
-				skewY: "10deg",
-			}, {
-				duration: 0.4,
-				opacity: 1,
-				y: 0,
-				skewY: "0deg",
-				ease: Power1.easeOut,	
-			}, '>');
-			// If there's blurb heading:
-			if (blurbWrapper){
-				tlHero
-					.fromTo(blurbWrapper, {
-					opacity: 0,
-					y: 64,
-					skewY: "10deg",
-				}, {
-					duration: 0.4,
-					delay: 0.1,
-					opacity: 1,
-					y: 0,
-					skewY: "0deg",
-					ease: Power1.easeOut,	
-				}, '>');
-			}
-		}
 	}
 	// DESKTOP:
 	else {
