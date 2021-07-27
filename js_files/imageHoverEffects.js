@@ -173,9 +173,11 @@
       this.inMenuPosition = inMenuPosition;
       // menu item properties that will animate as we move the mouse around the menu
       this.animatableProperties = animatableProperties;
-      this.imageUrl = el.dataset.img;
+//       this.imageUrl = el.dataset.img;
+      
       // the item text
       // this.DOM.textInner = this.DOM.el.querySelector('.menu__item-textinner');
+      
       // create the image structure
       this.layout();
       // initialize some events
@@ -200,7 +202,9 @@
       this.DOM.revealInner.className = 'hover-reveal__inner';
       this.DOM.revealImage = document.createElement('div');
       this.DOM.revealImage.className = 'hover-reveal__img';
-      this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
+//       this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
+        this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
+           
       this.DOM.revealInner.appendChild(this.DOM.revealImage);
       this.DOM.reveal.appendChild(this.DOM.revealInner);
       this.DOM.el.appendChild(this.DOM.reveal);
