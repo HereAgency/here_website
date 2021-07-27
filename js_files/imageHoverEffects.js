@@ -143,7 +143,7 @@
   //*************************************
   // menu (<nav> element)
   const menuEl = document.querySelector('.menu');
-  preloader('.menu__item').then(() => {
+  preloader('.list-item').then(() => {
     // initialize custom cursor
     const cursor = new Cursor(document.querySelector('.cursor'));
     // initialize menu
@@ -167,7 +167,7 @@
 
   class MenuItem {
     constructor(el, inMenuPosition, animatableProperties) {
-      // el is the <a> with class "menu__item"
+      // el is the <a> with class "list-item"
       this.DOM = {el: el};
       // position in the Menu
       this.inMenuPosition = inMenuPosition;
@@ -350,7 +350,7 @@
       // el is the menu element (<nav>)
       this.DOM = {el: el};
       // the menu item elements (<a>)
-      this.DOM.menuItems = this.DOM.el.querySelectorAll('.menu__item');
+      this.DOM.menuItems = this.DOM.el.querySelectorAll('.list-item');
       // menu item properties that will animate as we move the mouse around the menu
       // we will be using interpolation to achieve smooth animations. 
       // the “previous” and “current” values are the values to interpolate. 
