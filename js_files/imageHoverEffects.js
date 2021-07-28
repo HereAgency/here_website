@@ -1,46 +1,5 @@
-  //*************************************
-  // LOCOMOTIVE SCROLL
-  //*************************************
-//   const scroller = new LocomotiveScroll({
-//     el: document.querySelector('.scroll-container'),
-//     smooth: true
-//   })
+// https://tympanus.net/Tutorials/RapidImageHoverMenu/
 
-  //*************************************
-  // SECTION: BACKGROUND CHANGE ON HOVER
-  //*************************************
-//   const labelTrigger = $(".hover-section .section-wrapper a");
-//   const hoverImg = "#service-img-";
-//   const hoverLabel = "#service-lbl-";
-//   const allLabels = $("[id*=service-lbl-]");
-
-//   let imgId = 0;
-
-//   labelTrigger.mouseenter(function() {
-//     imgId = this.id.slice(-1);
-
-//     // HIGHLIGHT ONLY THE LABEL ON HOVER:
-//     allLabels.css("opacity", "0.32");
-//     $(hoverLabel+imgId+"").css("opacity", "1", );
-
-//     // SHOW IMAGE AND ANIMATE TO MOVE RIGHT
-//     $(hoverImg + imgId + "")
-//       .fadeIn()
-//       .addClass("service-lbl-active")
-//   });
-//   labelTrigger.mouseleave(function() {
-//     imgId = this.id.slice(-1);
-
-//     // LABELS BACK TO NORMAL COLOR
-//     allLabels.css("opacity", "1");
-
-//     // HIDE IMAGE
-//     // console.log("mouseleft item: "+ imgId);
-//     $(hoverImg + imgId + "")
-//       .css("opacity", "0")
-//       .removeClass("service-lbl-active")
-//   });
-  
   //*************************************
   // CODROPS ANIMATION - preloader.js
   //*************************************
@@ -138,6 +97,7 @@
   //       requestAnimationFrame(() => this.render());
   //     }
   //   }
+
   //*************************************
   // CODROPS ANIMATION - index.js file
   //*************************************
@@ -150,7 +110,6 @@
     new Menu(menuEl);
   });
   
-  
   //*************************************
   // CODROPS ANIMATION - menuItem.js file
   //*************************************
@@ -159,9 +118,9 @@
   // cache the mouse position
   let mousePosCache = mousepos;
   let direction = {x: mousePosCache.x-mousepos.x, y: mousePosCache.y-mousepos.y};
-  // const images = ["https://dl.dropboxusercontent.com/s/orfth641x9yfsa6/ahmad-ossayli-6-cxfA4MKpk-unsplash.jpeg?dl=0",
-  //                "https://dl.dropboxusercontent.com/s/nnx9lz5dcvh7qgy/ian-dooley-DJ7bWa-Gwks-unsplash.jpeg?dl=0",
-  //                "https://dl.dropboxusercontent.com/s/m94hawze6m4fjmk/luca-bravo-9l_326FISzk-unsplash.jpeg?dl=0"];
+  const images = ["https://dl.dropboxusercontent.com/s/orfth641x9yfsa6/ahmad-ossayli-6-cxfA4MKpk-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/nnx9lz5dcvh7qgy/ian-dooley-DJ7bWa-Gwks-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/m94hawze6m4fjmk/luca-bravo-9l_326FISzk-unsplash.jpeg?dl=0"];
   // update mouse position when moving the mouse
   window.addEventListener('mousemove', ev => mousepos = getMousePos(ev));
 
@@ -203,6 +162,9 @@
       this.DOM.revealImage = document.createElement('div');
       this.DOM.revealImage.className = 'hover-reveal__img';
 //       this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
+      
+      console.log('inMenuPosition: ' + this.inMenuPosition][1]);
+      
         this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
            
       this.DOM.revealInner.appendChild(this.DOM.revealImage);
