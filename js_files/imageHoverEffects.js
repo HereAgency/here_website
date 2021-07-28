@@ -163,7 +163,7 @@
       this.DOM.revealImage.className = 'hover-reveal__img';
 //       this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
       
-      console.log('inMenuPosition: ' + this.inMenuPosition][1]);
+      console.log('inMenuPosition: ' + [this.inMenuPosition][1]);
       
         this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
            
