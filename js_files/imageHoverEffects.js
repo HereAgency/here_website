@@ -1,33 +1,34 @@
+
+  
 // https://tympanus.net/Tutorials/RapidImageHoverMenu/
 
   //*************************************
   // CODROPS ANIMATION - preloader.js
   //*************************************
-  const body = document.body;
-  
-  const preloader = selector => {
-    return new Promise(resolve => {
+//   const body = document.body;
+//   const preloader = selector => {
+//     return new Promise(resolve => {
 
-      const imgwrap = document.createElement('div');
-      imgwrap.style.visibility = 'hidden';
-      body.appendChild(imgwrap);
+//       const imgwrap = document.createElement('div');
+//       imgwrap.style.visibility = 'hidden';
+//       body.appendChild(imgwrap);
 
-      [...document.querySelectorAll(selector)].forEach(el => {
-        const imgEl = document.createElement('img');
-        imgEl.style.width = 0;
-        imgEl.src = el.dataset.img;
-        imgEl.className = 'preload';
-        imgwrap.appendChild(imgEl);
-      });
+//       [...document.querySelectorAll(selector)].forEach(el => {
+//         const imgEl = document.createElement('img');
+//         imgEl.style.width = 0;
+//         imgEl.src = el.dataset.img;
+//         imgEl.className = 'preload';
+//         imgwrap.appendChild(imgEl);
+//       });
 
-      imagesLoaded(document.querySelectorAll('.preload'), () => {
-        imgwrap.parentNode.removeChild(imgwrap);
-        body.classList.remove('loading');
-        resolve();
-      });
+//       imagesLoaded(document.querySelectorAll('.preload'), () => {
+//         imgwrap.parentNode.removeChild(imgwrap);
+//         body.classList.remove('loading');
+//         resolve();
+//       });
 
-    });
-  };
+//     });
+//   };
   //*************************************
   // CODROPS ANIMATION - utils.js
   //*************************************
@@ -45,70 +46,62 @@
     let posy = 0;
     if (!e) e = window.event;
     if (e.pageX || e.pageY) {
-      posx = e.pageX;
-      posy = e.pageY;
+        posx = e.pageX;
+        posy = e.pageY;
     }
     else if (e.clientX || e.clientY)    {
-      posx = e.clientX + body.scrollLeft + document.documentElement.scrollLeft;
-      posy = e.clientY + body.scrollTop + document.documentElement.scrollTop;
+        posx = e.clientX + body.scrollLeft + document.documentElement.scrollLeft;
+        posy = e.clientY + body.scrollTop + document.documentElement.scrollTop;
     }
+    
     return { x : posx, y : posy }
   };
   // Generate a random float.
-  const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
+  // const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
   
  
   //*************************************
   // CODROPS ANIMATION - cursor.js
   //*************************************
-  // Track the mouse position
-  //   let mouse = {x: 0, y: 0};
-  //   window.addEventListener('mousemove', ev => mouse = getMousePos(ev));
+// Track the mouse position
+//   let mouse = {x: 0, y: 0};
+//   window.addEventListener('mousemove', ev => mouse = getMousePos(ev));
 
-  //   class Cursor {
-  //     constructor(el) {
-  //       this.DOM = {el: el};
-  //       this.DOM.el.style.opacity = 0;
+//   class Cursor {
+// 		constructor(el) {
+// 			this.DOM = {el: el};
+// 			this.DOM.el.style.opacity = 0;
 
-  //       this.bounds = this.DOM.el.getBoundingClientRect();
+// 			this.bounds = this.DOM.el.getBoundingClientRect();
 
-  //       this.renderedStyles = {
-  //         tx: {previous: 0, current: 0, amt: 0.2},
-  //         ty: {previous: 0, current: 0, amt: 0.2}
-  //       };
+// 			this.renderedStyles = {
+// 				tx: {previous: 0, current: 0, amt: 0.2},
+// 				ty: {previous: 0, current: 0, amt: 0.2}
+// 			};
 
-  //       this.onMouseMoveEv = () => {
-  //         this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width/2;
-  //         this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height/2;
-  //         gsap.to(this.DOM.el, {duration: 0.9, ease: 'Power3.easeOut', opacity: 1});
-  //         requestAnimationFrame(() => this.render());
-  //         window.removeEventListener('mousemove', this.onMouseMoveEv);
-  //       };
-  //       window.addEventListener('mousemove', this.onMouseMoveEv);
-  //     }
-  //     render() {
-  //       this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2;
-  //       this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2;
+// 			this.onMouseMoveEv = () => {
+// 				this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width/2;
+// 				this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height/2;
+// 				gsap.to(this.DOM.el, {duration: 0.9, ease: 'Power3.easeOut', opacity: 1});
+// 				requestAnimationFrame(() => this.render());
+// 				window.removeEventListener('mousemove', this.onMouseMoveEv);
+// 			};
+// 			window.addEventListener('mousemove', this.onMouseMoveEv);
+// 		}
+// 		render() {
+// 			this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2;
+// 			this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2;
 
-  //       for (const key in this.renderedStyles ) {
-  //         this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt);
-  //       }
-  //       this.DOM.el.style.transform = `translateX(${(this.renderedStyles['tx'].previous)}px) translateY(${this.renderedStyles['ty'].previous}px)`;
-  //       requestAnimationFrame(() => this.render());
-  //     }
-  //   }
+// 			for (const key in this.renderedStyles ) {
+// 				this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt);
+// 			}
 
-  //*************************************
-  // CODROPS ANIMATION - index.js file
-  //*************************************
-  // menu (<nav> element)
-  const menuEl = document.querySelector('.menu');
-  preloader('.list-item').then(() => {
-    // initialize custom cursor
-//     const cursor = new Cursor(document.querySelector('.cursor'));
-    // initialize menu
-    new Menu(menuEl);
-  });
+// 			this.DOM.el.style.transform = `translateX(${(this.renderedStyles['tx'].previous)}px) translateY(${this.renderedStyles['ty'].previous}px)`;
+
+// 			requestAnimationFrame(() => this.render());
+// 		}
+//   }
+
   
   //*************************************
   // CODROPS ANIMATION - menuItem.js file
@@ -119,6 +112,12 @@
   let mousePosCache = mousepos;
   let direction = {x: mousePosCache.x-mousepos.x, y: mousePosCache.y-mousepos.y};
   const images = ["https://dl.dropboxusercontent.com/s/orfth641x9yfsa6/ahmad-ossayli-6-cxfA4MKpk-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/nnx9lz5dcvh7qgy/ian-dooley-DJ7bWa-Gwks-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/m94hawze6m4fjmk/luca-bravo-9l_326FISzk-unsplash.jpeg?dl=0",
+								 "https://dl.dropboxusercontent.com/s/orfth641x9yfsa6/ahmad-ossayli-6-cxfA4MKpk-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/nnx9lz5dcvh7qgy/ian-dooley-DJ7bWa-Gwks-unsplash.jpeg?dl=0",
+                 "https://dl.dropboxusercontent.com/s/m94hawze6m4fjmk/luca-bravo-9l_326FISzk-unsplash.jpeg?dl=0",
+								 "https://dl.dropboxusercontent.com/s/orfth641x9yfsa6/ahmad-ossayli-6-cxfA4MKpk-unsplash.jpeg?dl=0",
                  "https://dl.dropboxusercontent.com/s/nnx9lz5dcvh7qgy/ian-dooley-DJ7bWa-Gwks-unsplash.jpeg?dl=0",
                  "https://dl.dropboxusercontent.com/s/m94hawze6m4fjmk/luca-bravo-9l_326FISzk-unsplash.jpeg?dl=0"];
   // update mouse position when moving the mouse
@@ -154,7 +153,7 @@
       // this is the element that gets its position animated (and perhaps other properties like the rotation etc..)
       this.DOM.reveal = document.createElement('div');
       this.DOM.reveal.className = 'hover-reveal';
-      this.DOM.reveal.style.transformOrigin = '0% 0%';
+      // this.DOM.reveal.style.transformOrigin = '0% 0%';
       // the next two elements could actually be only one, the image element
       // adding an extra wrapper (revealInner) around the image element with overflow hidden, gives us the possibility to scale the image inside
       this.DOM.revealInner = document.createElement('div');
@@ -162,15 +161,13 @@
       this.DOM.revealImage = document.createElement('div');
       this.DOM.revealImage.className = 'hover-reveal__img';
 //       this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
-      
-      console.log('inMenuPosition: ' + [this.inMenuPosition][1]);
-      
-        this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
+
+			this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition]})`;
            
       this.DOM.revealInner.appendChild(this.DOM.revealImage);
       this.DOM.reveal.appendChild(this.DOM.revealInner);
       this.DOM.el.appendChild(this.DOM.reveal);
-      console.log(this.DOM.el);
+      // console.log(this.DOM.el);
     }
     // calculate the position/size of both the menu item and reveal element
     calcBounds() {
@@ -196,38 +193,37 @@
       };
       this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
       this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
-      // console.log("mouseenter");
     }
     // show the image element
     showImage() {
+      console.log("showImage()");
       // kill any current tweens
       gsap.killTweensOf(this.DOM.revealInner);
       gsap.killTweensOf(this.DOM.revealImage);
 
       this.tl = gsap.timeline({
         onStart: () => {
-          // show both image and its parent element
-          this.DOM.reveal.style.opacity = this.DOM.revealInner.style.opacity = 1;
-          // set a high z-index value so image appears on top of other elements
-          gsap.set(this.DOM.el, {zIndex: 10});
+                // show the image element
+                this.DOM.reveal.style.opacity = 1;
+                // set a high z-index value so image appears on top of other elements
+                gsap.set(this.DOM.el, {zIndex: images.length});
         }
       })
-      // animate the image wrap
-        .to(this.DOM.revealInner, 1.2, {
-        ease: 'Expo.easeOut',
-        startAt: {scale: 0.3},
-        scale: 1
-      })
-      // animate the image element
-        .to(this.DOM.revealImage, 1.2, {
-        ease: 'Expo.easeOut',
-        startAt: {scale: 1.7},
-        scale: 1
-      }, 0);
+			// animate the image wrap
+				.to(this.DOM.revealInner, 0.2, {
+				ease: 'Sine.easeOut',
+				startAt: {x: direction.x < 0 ? '-100%' : '100%'},
+				x: '0%'
+			})
+			// animate the image element
+				.to(this.DOM.revealImage, 0.2, {
+				ease: 'Sine.easeOut',
+				startAt: {x: direction.x < 0 ? '100%': '-100%'},
+				x: '0%'
+			}, 0);
     }
     // hide the image element
     hideImage() {
-      console.log("hideImage()");
       // kill any current tweens
       gsap.killTweensOf(this.DOM.revealInner);
       gsap.killTweensOf(this.DOM.revealImage);
@@ -240,15 +236,14 @@
           gsap.set(this.DOM.reveal, {opacity: 0});
         }
       })
-        .to(this.DOM.revealInner, 1.8, {
-        ease: 'Power3.easeOut',
-        scale: 0.3,
-        opacity: 0
-      })
-        .to(this.DOM.revealImage, 1.8, {
-        ease: 'Power3.easeOut',
-        scale: 1.7
-      }, 0);
+				.to(this.DOM.revealInner, 0.2, {
+				ease: 'Sine.easeOut',
+				x: direction.x < 0 ? '100%' : '-100%'
+			})
+				.to(this.DOM.revealImage, 0.2, {
+				ease: 'Sine.easeOut',
+				x: direction.x < 0 ? '-100%' : '100%'
+			}, 0);
     }
     // start the render loop animation (rAF)
     loopRender() {
@@ -334,12 +329,25 @@
       };
       // array of MenuItem instances
       this.menuItems = [];
-      // console.log(this.menuItems);
+			
       // initialize the MenuItems
-        // console.log(this.menuItems);
       [...this.DOM.menuItems].forEach((item, pos) => {
         this.menuItems.push(new MenuItem(item, pos, this.animatableProperties));
       }); 
      
     }
   }
+
+//*************************************
+  // CODROPS ANIMATION - index.js file
+  //*************************************
+  // menu (<nav> element)
+  const menuEl = document.querySelector('.menu');
+  // preloader('.list-item').then(() => {
+    // initialize custom cursor
+    // const cursor = new Cursor(document.querySelector('.cursor'));
+    // initialize menu
+    new Menu(menuEl);
+  // });
+  
+    // new Menu(menuEl);
