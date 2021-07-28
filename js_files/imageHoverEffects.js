@@ -206,7 +206,7 @@
                 // show the image element
                 this.DOM.reveal.style.opacity = 1;
                 // set a high z-index value so image appears on top of other elements
-                gsap.set(this.DOM.el, {zIndex: images.length});
+                gsap.set(this.DOM.el, {zIndex: 20});
         }
       })
 			// animate the image wrap
