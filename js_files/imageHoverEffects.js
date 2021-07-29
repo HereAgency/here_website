@@ -197,16 +197,21 @@
     // show the image element
     showImage() {
       console.log("showImage()");
+	    
       // kill any current tweens
       gsap.killTweensOf(this.DOM.revealInner);
       gsap.killTweensOf(this.DOM.revealImage);
 
       this.tl = gsap.timeline({
         onStart: () => {
+		
                 // show the image element
                 this.DOM.reveal.style.opacity = 1;
                 // set a high z-index value so image appears on top of other elements
-                gsap.set(this.DOM.el, {zIndex: 20});
+		if(this.DOM.el){
+			gsap.set(this.DOM.el, {zIndex: 20});
+		}
+                
         }
       })
 			// animate the image wrap
@@ -230,10 +235,14 @@
 
       this.tl = gsap.timeline({
         onStart: () => {
-          gsap.set(this.DOM.el, {zIndex: 1});
+		if(this.DOM.el){
+			gsap.set(this.DOM.el, {zIndex: 1});
+		}
         },
         onComplete: () => {
-          gsap.set(this.DOM.reveal, {opacity: 0});
+		if(this.DOM.reveal){
+  			gsap.set(this.DOM.reveal, {opacity: 0});
+		}
         }
       })
 				.to(this.DOM.revealInner, 0.2, {
@@ -289,12 +298,14 @@
       this.animatableProperties.brightness.previous = this.firstRAFCycle ? this.animatableProperties.brightness.current : lerp(this.animatableProperties.brightness.previous, this.animatableProperties.brightness.current, this.animatableProperties.brightness.amt);
 
       // set styles
-      gsap.set(this.DOM.reveal, {
-        x: this.animatableProperties.tx.previous,
-        y: this.animatableProperties.ty.previous,
-        rotation: this.animatableProperties.rotation.previous,
-        filter: `brightness(${this.animatableProperties.brightness.previous})`
-      });
+      if(this.DOM.reveal){
+	      gsap.set(this.DOM.reveal, {
+		x: this.animatableProperties.tx.previous,
+		y: this.animatableProperties.ty.previous,
+		rotation: this.animatableProperties.rotation.previous,
+		filter: `brightness(${this.animatableProperties.brightness.previous})`
+	      });
+      }
 
       // loop
       this.firstRAFCycle = false;
