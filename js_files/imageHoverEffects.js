@@ -21,7 +21,7 @@ $( ".list-item" ).mouseenter(function(ev) {
 
 $( ".list-item" ).mouseleave(function(ev) {
 	$(this).css({"opacity":"1", "color":"black", "height": "84px"});
-	$(".list-item").css({"opacity":"1", "color":"black", "height": "84px"});
+	$(".list-item").css({"opacity":"1", "color":"black", "height": "84px","paddingTop":"24px"});
 });
 
 /* ****************************************************************
