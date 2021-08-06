@@ -150,7 +150,7 @@ $( ".list-item" ).mouseleave(function(ev) {
 *	SWITCH TO OPACITY: 1 TO SHOW THE IMAGES		*	
 *********************************************************/
 		.set(this.DOM.reveal,{
-			opacity: 0,
+			opacity: 1,
 			delay: 0.2,
 		})
 		.add('begin')
