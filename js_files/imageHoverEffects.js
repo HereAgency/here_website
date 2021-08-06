@@ -143,12 +143,14 @@ $( ".list-item" ).mouseleave(function(ev) {
 		TweenMax.killTweensOf(this.DOM.revealImg);
 		this.tl = new TimelineMax({
 			onStart: () => {
-			    // this.DOM.reveal.style.opacity = 1;
 			    TweenMax.set(this.DOM.el, {zIndex: 1000});
 			}
 		})
+/********************************************************
+*	SWITCH TO OPACITY: 1 TO SHOW THE IMAGES		*	
+*********************************************************/
 		.set(this.DOM.reveal,{
-			opacity: 1,
+			opacity: 0,
 			delay: 0.2,
 		})
 		.add('begin')
