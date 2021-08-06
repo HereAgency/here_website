@@ -123,9 +123,9 @@ $( ".list-item" ).mouseleave(function(ev) {
 			this.firstRAFCycle = false;
             	};
 		this.mouseenterFn = (ev) => {
+			this.firstRAFCycle = true;
 			this.positionElement(ev);
 			this.showImage();
-			this.firstRAFCycle = true;
 		};
 		this.mousemoveFn = (ev) => requestAnimationFrame(() => {
 			this.positionElement(ev);
